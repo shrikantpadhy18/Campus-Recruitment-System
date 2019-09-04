@@ -13,7 +13,8 @@ $email=$_POST['email'];
 $sub=$_POST['subject'];
 $msg=$_POST['message'];
 
-$con=mysql_connect('localhost:3308','root');
+$con=mysqli_connect('localhost:3308','root');
+mysqli_select_db($con,'db3');
 $q="insert into feed(name,email,subject,message) values('$name','$email','$sub','$msg')";
 $out=mysqli_query($con,$q);
 if($out)
@@ -21,7 +22,7 @@ if($out)
 	?>
 	<script type="text/javascript">
 		alert("response submitted successfully");
-		document.getElementById('feed').action="localhost/app/html/homepage.html";
+		document.getElementById('feed').action="http://localhost/app/html/homepage.html";
 		document.getElementById('feed').submit();
 	</script>
 	<?php
@@ -32,7 +33,7 @@ else
 	?>
 	<script type="text/javascript">
 		alert("response could not be submitted");
-		document.getElementById('feed').action="localhost/app/html/homepage.html";
+		document.getElementById('feed').action="http://localhost/app/html/homepage.html";
 		document.getElementById('feed').submit();
 	</script>
 

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,7 +51,7 @@
 	
 	
 	<?php
-	session_start();
+	
 	$con=mysqli_connect("localhost:3308","root");
 	$name=$_POST['name'];
 	$username=$_POST['uname'];
@@ -57,6 +60,7 @@
 	$roll=$_POST['roll'];
 	$branch=$_POST['branch'];
 	$contact=$_POST['contact'];
+	
 
 
 	
@@ -84,9 +88,11 @@
 			$rows=mysqli_num_rows($d);
 			}
 			$q="insert into register1 (roll,name,number,branch,username,password,email) values ('$roll','$name',$contact,'$branch','$username','$password','$email')";
+		
 			$c=mysqli_query($con,$q);
 			
 			if ($c and $rows==0) {
+				
 				?>
 					<script type="text/javascript">
 						alert("YOUR ACCOUNT CREATION IS SUCCESFULLY DONE");
@@ -98,7 +104,7 @@
 					    <h4 class="card-title">SELECT VIEW</h4>
 					    <p class="card-text">SELECT AMONG THE FOLOWING OPTIONS.</p>
 					    <ol>
-					    <li><a  class="btn btn-primary" href="http://localhost/app/php/dashboard.php">GO TO DASHBOARD</a></li><hr>
+					    <li><a  class="btn btn-primary" href="http://localhost/app/php/login.php">GO TO LOGINPAGE</a></li><hr>
 						<li><a  class="btn btn-primary" href="http://localhost/app/html/homepage.html">CLICK HERE TO GO BACK TO YOUR HOMEPAGE</a></li>
 						</ol>
 					    
@@ -115,7 +121,7 @@
 					  	<marquee><p onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue' " style="color: blue;">"YOU HAVE ALREADY REGISTERED"</p></marquee>
 					    <h4 class="card-title">SELECT VIEW</h4>
 					    <p class="card-text">SELECT AMONG THE FOLOWING OPTIONS.</p>
-					    <a  class="btn btn-primary" href="http://localhost/app/html/homepage.html">CLICK HERE TO GO BACK TO YOUR HOMEPAGE</a>
+					    <a  class="btn btn-primary" href="http://localhost/app/php/login.php">CLICK HERE TO GO BACK TO LOGINPAGE</a>
 					  </div>
 					</div>
 				
@@ -143,10 +149,7 @@
 
 				<?php
 			}
-
-		}
-
-			
+		}			
 	?>
 </div>
 </body>

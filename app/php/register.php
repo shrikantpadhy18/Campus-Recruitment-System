@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,19 +18,19 @@
 }
 	</style>
 </head>
-<body style="background-color: aliceblue;">
-	<header style="background-color: #006db0;" class="header">
+<body style="background-image: url('https://www.goireland.in/images/companies.jpg');">
+	<header style="background-color: #006db0;" class="header" id="jumbo">
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
 		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
 
-			<a href="http://localhost/app/homepage.html">Back</a>
+			<a href="http://localhost/app/html/homepage.html">Back</a>
 	</header>
 
 	<div id="id02" class="modal">
   
   <form name="register" class="modal-content animate" method="POST"  action="" onsubmit ="checkit()" id="formreg">
     <div class="imgcontainer">
-      <img src="http://localhost/app/img_avatar.png" alt="Avatar" class="avatar" >
+      <img src="http://localhost/app/images/img_avatar.png" alt="Avatar" class="avatar" >
     </div>
 
     <div class="container">
@@ -169,5 +171,6 @@
  <div class="footer">
   <p>"knowledge is power"</p>
 </div>
+
 </body>
 </html>

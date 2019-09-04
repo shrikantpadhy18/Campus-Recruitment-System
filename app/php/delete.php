@@ -21,7 +21,7 @@
 		$num=mysqli_num_rows($result);
 	}
 
-	if($num>0){
+	if($num>0 and $cid!=" " and $psw!=" "){
 	$q="delete from company where cid='$cid' and password='$psw'";
 	}
 	$outcome=mysqli_query($con,$q);

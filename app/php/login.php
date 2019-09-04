@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +19,8 @@
 }
 	</style>
 </head>
-<body>
-	<header style="background-color: #006db0;" class="header">
+<body style="background-image: url('https://www.itcompanyindia.in/img/en/It-Company.png');">
+	<header style="background-color: #006db0;" class="header" id="jumbo">
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
 		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
 			<a href="http://localhost/app/html/homepage.html">Back</a>
@@ -27,7 +30,7 @@
 	<hr>
 
 <div id="id01" class="modal">
-  <section style="background-image: url('http://localhost/app/images/texture1.jpeg');">
+  
   
   <form class="modal-content animate" action="http://localhost/app/php/actionpage.php" method="POST">
     <div class="imgcontainer">
@@ -36,6 +39,7 @@
     </div>
 
     <div class="container">
+      
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -57,7 +61,7 @@
       <a href="#display">change password</a>
     </div>
   </form>
-</section>
+
 
 
 <form id="display" class="modal-content animate"  action="http://localhost/app/php/login.php" method="POST">

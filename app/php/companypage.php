@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,15 +8,15 @@
 </head>
 <body>
 	<?php
-	session_start();
-	$num=0;
+	
 	$result=0;
 	$cid=$_POST['cid'];
 	$psw=$_POST['psw'];
-	$q="select * from comapny where cid='$cid' and password='$psw'";
+	$_SESSION['cid']=$cid;
+	$q="select * from company where cid='$cid' and password='$psw'";
 	$con=mysqli_connect('localhost:3308','root');
 	mysqli_select_db($con,'db3');
-	$num=0
+	$num=0;
 	$result=mysqli_query($con,$q);
 	if($result)
 	{

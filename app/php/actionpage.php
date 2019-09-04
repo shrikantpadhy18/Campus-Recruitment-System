@@ -1,3 +1,7 @@
+<?php 
+session_start();
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +12,16 @@
 </head>
 <body>
 		<?php
-		session_start();
+		
 		$result=0;
 		$num=0;
 			$uname=$_POST['uname'];
 			$psw=$_POST['psw1'];
 			$roll=$_POST['roll'];
+			$_SESSION['susername']=$uname;
+			$_SESSION['roll']=$roll;
+
+			echo $_SESSION['roll'];
 			$con=mysqli_connect('localhost:3308','root');
 			mysqli_select_db($con,'db3');
 			$q="select * from register1 where username='$uname' and roll='$roll' and password='$psw'";
@@ -53,14 +61,15 @@
 
 					function ahead()
 					{
-						document.getElementById('ahead').action='http://localhost/app/php/index.php';
+						document.getElementById('ahead').action='http://localhost/app/php/studentview1.php';
+
 						document.getElementById('ahead').submit();
 					}
 					</script>
 				</form>
 
 				<?php
-
+				
 			}
 
 		?>
