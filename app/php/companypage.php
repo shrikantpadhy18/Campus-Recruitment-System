@@ -47,6 +47,8 @@ session_start();
 			}
 			else if($num>0)
 			{
+				$_SESSION['cid']=$cid;
+				$_SESSION['psw1']=$psw;
 				?>
 				<form id="ahead" action="#">
 					<script type="text/javascript">

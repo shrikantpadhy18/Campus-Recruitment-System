@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['aid']))
+{
+	header('location:http://localhost/app/html/adminlogin.html');
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,9 +46,10 @@ table
 <header style="background-color: #006db0;" class="header">
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
 		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-			<a href="http://localhost/app/html/homepage.html" onclick="<?php session_destroy();?>">LOGOUT</a>
-	</header>
+			<a href="http://localhost/app/php/logout.php" >LOGOUT</a>
 
+	</header>
+<p style="text-align: right;color: yellow;font-size: 25px">Hello <?php echo $_SESSION['aid']; ?></p>
 <script type="text/javascript">
 		function creation()
 		{

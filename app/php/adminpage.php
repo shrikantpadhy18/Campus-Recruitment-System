@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +10,15 @@
 </head>
 <body>
 <?php
-session_start();
+
 $result=0;
 $num=0;
 $aid=$_POST['aid'];
 $password=$_POST['psw'];
 $con=mysqli_connect('localhost:3308','root');
 mysqli_select_db($con,'db3');
+
+
 
 
 $q="select * from adminDetail where adminid='$aid' and password='$password'";
@@ -46,6 +51,7 @@ if($num==0)
 			}
 			else if($num>0)
 			{
+				$_SESSION['aid']=$aid;
 				?>
 				<form id="ahead" action="#">
 					<script type="text/javascript">

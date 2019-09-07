@@ -1,5 +1,9 @@
 <?php
 	session_start();
+    if ( !isset($_SESSION['roll'])) {
+        # hcode...
+    header('location:http://localhost/app/php/login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +53,7 @@ table
 <header style="background-color: #006db0;" class="header">
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
 		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-			<a href="http://localhost/app/html/homepage.html" >LOGOUT</a>
+			<a href="http://localhost/app/php/logoutst.php" >LOGOUT</a>
 	 
 	
 	</header>

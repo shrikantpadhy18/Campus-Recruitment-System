@@ -1,5 +1,9 @@
 <?php
   session_start();
+  if ( !isset($_SESSION['cid'])) {
+    # code...
+    header('location:http://localhost/app/html/companylogin.html');
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -92,7 +96,7 @@ form
     <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
       
    
-   <a style="right:5px;background-color: orange;" href="http://localhost//app/html/homepage.html" class="btn btn-primary" onclick="destry()">LOGOUT</a>
+   <a style="right:5px;background-color: orange;" href="http://localhost//app/php/logoutcp.php" class="btn btn-primary" >LOGOUT</a>
   </header>
   <center><h6>COMPANY VIEW</h6></center><br>
 
@@ -217,7 +221,7 @@ form
 
           }
         }
-        mysqli_close();
+        
         ?>
     </table>
     </h6>

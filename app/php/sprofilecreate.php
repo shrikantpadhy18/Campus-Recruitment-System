@@ -1,6 +1,10 @@
 
 <?php 
 session_start();
+if (!isset($_SESSION['roll'])) {
+        # hcode...
+    header('location:http://localhost/app/php/login.php');
+    }
  ?>
 
 <!DOCTYPE html>
@@ -100,7 +104,7 @@ session_start();
 	?>
 
 	</header>
-	<a  href="http://localhost/app/html/homepage.html" >LOGOUT</a>
+<a href="http://localhost/app/php/logoutst.php" >LOGOUT</a>
 	<p style="text-align: center; text-shadow: rgb(120,120,112,0.4);"><?php echo $name;?></p>
 	
 	<table border="2px" class="table">

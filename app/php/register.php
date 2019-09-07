@@ -5,6 +5,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>  
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">       
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="http://localhost/app/js/ajax.js"></script>
 
 	<title></title>
 	<style type="text/css">
@@ -35,8 +37,10 @@
 
     <div class="container">
       <label for="uname"><b>Set Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
+      
+      <input onchange="available(this.value)" type="text" placeholder="Enter Username" id="username" name="uname" required>
+      
+      <label id="ajax" ></label><br>
       <label for="psw"><b>Set Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
       <ol>
@@ -84,6 +88,7 @@
       </label>
 
   <script type="text/javascript">
+   
   function validation()
   {
     
