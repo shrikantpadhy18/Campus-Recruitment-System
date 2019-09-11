@@ -12,44 +12,121 @@
   color: white;
   font-size: 30px;
 }
+body
+{
+  margin: 0;
+  padding: 0;
+  background:url('https://www.friendzion.com/locations/tirupur/images/leading-software-companies-tirupur.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: sans-serif;
+}
+.loginbox
+{
+  width: 320px;
+  height: 420px;
+  background: #000;
+  color: #fff;
+  top: 50%;
+  left:50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+.avat
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left:calc(50%-50px);
+
+}
+h1{
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+
+}
+.loginbox p
+{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.loginbox input
+{
+  width: 100%;
+  margin-bottom: 20px;
+
+}
+.loginbox input[type="text"],input[type="password"]
+{
+  border:none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color:#fff;
+  font-size: 20px;
+
+}
+.loginbox input[type="submit"]
+{
+  border:none;
+  outline: none;
+  height: 40px;
+  background: #fb2525;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+
+}
 </style>
 </head>
-<body style="background-image: url('http://www.infoactive3d.com/wp-content/uploads/2013/05/LogosCLIENTES.jpg');">
-	<header style="background-color: #006db0;" class="header">
-		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-			<a href="http://localhost/app/html/homepage.html">Back</a>
-	</header>
-	<br>
+<body >
+	
+
+        
+      <div style="background-color:#1aa4b8;" class="jumbotron jumbotron-fluid" id='jumbo'>
+  <div class="container">
+      <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
+      <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+      
+  </div>
+</div>
 	<br>
 	<hr>
 
-<div class="modal">
+<div class="loginbox">
   
-  
-  <form class="modal-content animate" action="http://localhost/app/php/companypage.php" method="POST">
-    <div class="imgcontainer">
-      <img src="http://localhost/app/images/img_avatar.png" alt="Avatar" class="avatar" >
-    </div>
-
-    <div class="container">
-      <label for="cid"><b>Company Id</b></label>
+    <img src="http://localhost/app/images/img_avatar.png" class="avat">
+    <h1>Company Login Here</h1>
+  <form class="modal-content-animate" action="http://localhost/app/php/companypage.php" method="POST">
+    
+    
+      <p>Company Id</p>
       <input type="text" placeholder="Enter Company Id" name="cid" required>
 
-      <label for="psw"><b>Password</b></label>
+      <p>Company Password</p>
       <input type="password" placeholder="Enter Password" name="psw" required>
         
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      <input type="submit" value="login"></login>
       
-    </div>
+        <input type="reset" name="" value="reset"><br>
+
+      
   </form>
+  
 
 
 </div>

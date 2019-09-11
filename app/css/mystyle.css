@@ -9,18 +9,73 @@
 * {box-sizing:border-box}
 
 /* Slideshow container */
-.slideshow-container {
-  max-width: 700px;
-  position: relative;
-  margin: auto;
-  left:130px;
-  bottom:420px
-}
+
 .details{
   background-color: aliceblue;
   border-radius: 50%;
   width:680px;
 
+}
+
+
+
+.card{
+  
+  
+  padding: 2px;
+  align-items: center;
+  margin-left:40%;
+  width: 350px;
+
+
+}
+@media screen and (max-width: 700px)
+{
+  .card
+  {
+   padding: 2px;
+   align-items: center;
+   margin-left: 1px;
+   width: 340px;
+   display: block;
+   font-size: 8px;
+   
+  }
+  .details
+  {
+    width:420px;
+    border-radius: 25%;
+    color:green;
+  }
+  #jumbo h2
+  {
+    display: none;
+  }
+  #jumbo h1{
+    font-size: 23px;
+    padding: 5px;
+    margin: 8px;
+    border-radius: 1px;
+  }
+  #jumbo h6
+  {
+    font-size: 25px;
+  }
+  #jumbo img
+  {
+  display:inline-flex;
+    width: 200px;
+
+  }
+  #jumbo a
+  {
+    margin: 3px;
+
+  }
+  
+  
+
+  
 }
 
 /* Hide the images by default */
@@ -160,9 +215,6 @@ img.avatar {
   border-radius: 50%;
 }
 
-.container {
-  padding: 16px;
-}
 
 span.psw {
   float: right;
@@ -212,7 +264,7 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen only (max-width: 300px) {
   span.psw {
      display: block;
      float: none;
@@ -229,14 +281,12 @@ span.psw {
   box-sizing: border-box;
 }
 /* Add some shadows to create a card effect */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
- align-content: center;
-}
+
 
 /* Some left and right padding inside the container */
 .container {
   padding: 0 16px;
+  
 }
 
 /* Clear floats */
@@ -274,10 +324,7 @@ span.psw {
   color: white;
   text-align: center;
 }
-#par{
-  border-radius: 12%;
 
-}
 
 #overlay {
   position: fixed;
@@ -311,11 +358,6 @@ body {
 }
 
 /* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
 
 /* Remove extra left and right margins, due to padding in columns */
 .row {margin: 0 -5px;}
@@ -328,18 +370,6 @@ body {
 }
 
 /* Style the counter cards */
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-  padding: 16px;
-  text-align: center;
-  background-color: #f1f1f1;
-}
+
 
 /* Responsive columns - one column layout (vertical) on small screens */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}

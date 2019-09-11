@@ -17,7 +17,7 @@ if(!isset($_SESSION['aid']))
 
 
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<title>
 		company_account 
 	</title>
@@ -88,7 +88,7 @@ table
 	</center>
 	</form>
    
-	<table style="position:absolute;top: 35%;height: 300px;background-image: url('https://img.freepik.com/free-photo/closeup-elegant-crumpled-white-silk-fabric-cloth-texture_50039-909.jpg?size=626&ext=jpg');">
+	<table style="position:absolute;top: 65%;height: 300px;background-image: url('https://img.freepik.com/free-photo/closeup-elegant-crumpled-white-silk-fabric-cloth-texture_50039-909.jpg?size=626&ext=jpg');">
 
 		<?php
 		$row=0;
@@ -131,7 +131,7 @@ if($num)
 	?>
 
 	
-		<table style="left: 80%;bottom: 50%" border="2px">
+		<table style="position:absolute;left: 80%;bottom: 30%" border="2px">
 
 			<tr>
 

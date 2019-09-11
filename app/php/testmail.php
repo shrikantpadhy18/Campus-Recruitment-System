@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['cid']))
+{
+	header('location:http://localhost/app/html/homepage.html');
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,9 +20,9 @@
 
 <?php
 $email=$_POST['email'];
-$msg=$_POST['mssg'];
+$msg="we are interested at your profile and looking forward to know about yourself";
 $to="$email";
-$subject="Response From Website";
+$subject="Response From " .$_SESSION['cid'];
 $message="'$msg'";
 $head="From:prashantpadhy21@gmail.com";
 if(mail($to,$subject,$message,$head))

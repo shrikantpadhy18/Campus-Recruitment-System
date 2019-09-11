@@ -43,75 +43,83 @@
     color: white;
     font-size: 30px;
 }
-form
-{
-  border:1px dotted red;
-  background-image: url('https://www.thoughtco.com/thmb/dz3u4mqCKJkJTghjJI8tcxGO2Og=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-583676186-58a1fe0a3df78c47586a758d.jpg');
-  border-radius: 13%;
-  scroll-behavior: smooth;
-  width: 400px;
- position: absolute;
- bottom: 5%;
- left: 39%;
- color: red;
- 
- font-style: italic;
- font-size: 22px;
+.tabular{
+  width: 900px;
+  margin-left: 20%;
+  background-color: white;
 
 }
 .table
 {
-  position: absolute;
-  left: 5%;
-  bottom: 20%;
-  width: 300px;
-  background-image: url('https://www.sbsgroup.com.sg/wp-content/uploads/Register-Cleaning-Company-in-Singapore.jpg');
+  width: 600px;
+  padding: 25px;
+  margin-left: 20%;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  
 }
-.table2
+@media screen and (max-width: 650px)
 {
-  position: absolute;
-  right:5%;
-  bottom: 17%;
-  width: 400px;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8-fVge5bSj9wQ9B91Kw08dlCMd-3qtacLYY23NJakBEcKeBt9jw');
-}
+  
+  #overla p
+  {
+    font-size: 15px;
+  }
+  #overla table
+  {
+    font-size: 10px;
+    
+    margin-left: 1%;
+    font-size: 15px;
+    padding: 0px;
+  }
+  .tabular{
+     position: absolute;
+  margin-left: 0%;
+  width: 550px;
+  left: 0px;
+  background-color: white;
+  display: block;
 
-.table3
+}
+.tabular h1
 {
-  position: absolute;
-  left:75%;
-  bottom: 60%;
-  width: 300px;
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8-fVge5bSj9wQ9B91Kw08dlCMd-3qtacLYY23NJakBEcKeBt9jw');
-  border-radius: 24%;
-  padding: 15px
+
+  font-size: 16px;
+  margin-left: 0%;
+}
+.table
+{
+  width: 450px;
+ 
+  margin-left: 0px;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  display: block;
+  overflow-x:auto;
+  
+}
 }
 
 </style>
 
 </head>
-<body style="background-image: url('https://jooinn.com/images/company-3.jpg');">
-<header style="background-color: #006db0;" class="header">
-    <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-    <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-      
-   
-   <a style="right:5px;background-color: orange;" href="http://localhost//app/php/logoutcp.php" class="btn btn-primary" >LOGOUT</a>
-  </header>
+<body  style="background-image: url('https://jooinn.com/images/company-3.jpg');">
+<div style="background-color:#1aa4b8;" class="jumbotron jumbotron-fluid" id='jumbo'>
+  <div class="container">
+      <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
+      <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+      <center><h2 ><b>CAMPUS RECRUITMENT DRIVE</h2> </center>
+        <a style="right:5px;background-color: orange;" href="http://localhost//app/php/logoutcp.php" class="btn btn-primary" >LOGOUT</a>
+  
+  </div>
+</div>
   <center><h6>COMPANY VIEW</h6></center><br>
 
-
- 
-   
-   
-  <script>
-    function destry()
-    {
-      session_destroy(); 
-    }
-  </script>
-   <div id="overla" onclick="off()">
-        <h6 style="font-size: 25px;z-index: 1;cursor: pointer;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 75px"></u></b><br>
+ <div id="overla" ondblclick="off()" style="overflow-x:auto;">
+        <p style="font-size: 25px;z-index: 1;cursor: pointer;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 25px"></u></b><br>
   <?php
     $rowss=0;
     $result=0;
@@ -122,7 +130,7 @@ form
   
     $con=mysqli_connect('localhost:3308','root');
     mysqli_select_db($con,'db3');
-    $q="select * from studprofile where cgpi>=$search1 and designation='$search2'";
+    $q="select * from studprofile where cgpi>=$search1 and designation LIKE  '%$search2%' ";
     $result=mysqli_query($con,$q);
   }
     if($result)
@@ -172,6 +180,7 @@ form
               <th>
                 DESIGNATION
               </th>
+              
             </tr>
 
           <?php
@@ -181,7 +190,10 @@ form
             ?>
             <tr>
               <td align="center">
-                <?php echo $out['roll']; ?>
+                <form action="http://localhost/app/php/searchresume.php" method="POST" >
+                <input readonly type="text" name="search" value="<?php echo $out['roll']; ?>" ></input>
+                <input type="submit" name="su" value="resume">
+              </form>
 
               </td>
               <td align="center">
@@ -210,11 +222,16 @@ form
                 <?php echo $out['contact']; ?>
               </td>
               <td align="center">
-                <?php echo $out['email']; ?>
+                <form action="http://localhost/app/php/testmail.php" method="POST">
+                  <input readonly type="email" name="email" value="<?php echo $out['email']; ?>"></input>
+                  <input type="submit" name="sub" value="send mail">
+                </form>
+                
               </td>
               <td align="center">
                 <?php echo $out['designation']; ?>
               </td>
+              
             </tr>
             
             <?php
@@ -224,17 +241,9 @@ form
         
         ?>
     </table>
-    </h6>
+    </p>
     </div>
-
-<table class="table" border="2px">
-   <form method="POST" action="http://localhost/app/php/dashboard.php">
-  <tr><td>  CGPI:<input type="search" name="search1" placeholder="enter cgpi needed" style="padding-top: 10px;margin-top: 20px"><br></td></tr>
-  <tr><td>  ROLE:<input type="search" name="search2" placeholder="DESIGNATION" style="padding-top: 10px;margin-top: 20px"><br></td></tr>
-   <tr><td> <center><input type="submit" name="submit3" value="STUDENT DETAILS" class="btn btn-primary" onclick="on()" style="padding-top: 10px;margin-top: 20px"></center></td></tr>
-  
-  </form>
-</table>
+    </table>
 
   <script type="text/javascript">
   function on() {
@@ -247,44 +256,41 @@ function off() {
  
 </script>
 
+<div class="tabular">
+
+<table class="table" border="2px">
+  <h1>Retrieving student details</h1>
+   <form method="POST" action="http://localhost/app/php/dashboard.php">
+  <tr><td>  CGPI:<input type="search" name="search1" placeholder="enter cgpi needed" style="padding-top: 10px;margin-top: 20px"><br></td></tr>
+  <tr><td>  ROLE:<input type="search" name="search2" placeholder="DESIGNATION" style="padding-top: 10px;margin-top: 20px"><br></td></tr>
+   <tr><td> <center><input type="submit" name="submit3" value="STUDENT DETAILS" class="btn btn-primary" onclick="on()" style="padding-top: 10px;margin-top: 20px"></center></td></tr>
+  
+  </form>
+  <hr>
+
+
  
 
   <?php
   $y=$_SESSION['cid'];
   ?>
+<table class="table" border="2px">
+  <h1>Filling Up Company Criteria</h1>
+<form  method="POST" action="http://localhost/app/php/dashboard.php">
+  <tr><td>company name:<input type="text" name="cname" value=<?php echo "$y";?> readonly></td></tr> 
+  <tr><td>skills required:<input type="text" name="skill" placeholder="skills needed" required><td></tr>
+  <tr><td>cgpi required:<input style="margin-top: 20px" type="number" placeholder="cgpi needed" name="cgpi" required></td></tr>
+  <tr><td>ssc percentage:<input style="margin-top: 20px" type="number" name="ssc" placeholder="ssc %" required></td></tr>
+  <tr><td>hsc percentage:<input style="margin-top: 20px" type="number" name="hsc" placeholder="hsc %" required></td></tr>
+  <tr><td>package:<input style="margin-top: 20px" type="text" name="package" placeholder="package" required></td></tr>
+  <tr><td><center><input type="submit" name="submit2" value="SET CREDENTIALS" class="btn btn-primary" onclick="fun()"></center></td></tr>
+  <br>
+  <hr>
 
-<form method="POST" action="http://localhost/app/php/dashboard.php">
-  company name:<input type="text" name="cname" value=<?php echo "$y";?> readonly> 
-  skills required:<input type="text" name="skill" placeholder="skills needed" required><br>
-  cgpi required:<input style="margin-top: 20px" type="number" placeholder="cgpi needed" name="cgpi" required><br>
-  ssc percentage:<input style="margin-top: 20px" type="number" name="ssc" placeholder="ssc %" required><br>
-  hsc percentage:<input style="margin-top: 20px" type="number" name="hsc" placeholder="hsc %" required><br>
-  package:<input style="margin-top: 20px" type="text" name="package" placeholder="package" required><br>
-  <center><input type="submit" name="submit2" value="SET CREDENTIALS" class="btn btn-primary" onclick="fun()"></center>
-
-
-</form>
-
-<table border="2px;" class="table2">
-<form action="http://localhost/app/php/testmail.php" method="POST">
-
-  <tr>
-    <td>
-     EMAIL ID: <input type="text" name="email" placeholder="enter mail">
-    </td>
-  </tr>
-  <tr>
-    <td>
-    MESSAGE:<input type="text" name="mssg" placeholder="message">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <center><input class="btn btn-primary" type="submit" value="send"></center>
-    </td>
-  </tr>
 </form>
 </table>
+<hr>
+
 
 <script type="text/javascript">
   
@@ -320,20 +326,10 @@ function off() {
 
 
 
-  <form action="http://localhost/app/php/searchresume.php" method="POST" class="table3">
-    <table >
-      <tr>
-        <td>
-           ENTER ROLL NO:<input type="search" name="search" required>
-        </td>
-      </tr>
-      <tr>
-        <td>
-        <center>  <input type="submit" name="submit" value="FINDRESUME"></center>
-        </td>
-      </tr>
-    </table>
-  
+  <hr>
+    <hr>
+</div>  
+<hr>
   </form>
    <div class="footer">
   <p>"knowledge is power"</p>

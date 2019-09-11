@@ -15,6 +15,66 @@
   	color: white;
   	font-size: 30px;
 }
+.tabular{
+  width: 900px;
+  margin-left: 20%;
+  background-color: white;
+
+}
+.table
+{
+  width: 600px;
+  padding: 25px;
+  margin-left: 20%;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  
+}
+@media screen and (max-width: 650px)
+{
+  
+  #overla p
+  {
+    font-size: 15px;
+  }
+  #overla table
+  {
+    font-size: 10px;
+    
+    margin-left: 1%;
+    font-size: 15px;
+    padding: 0px;
+  }
+  .tabular{
+     position: absolute;
+  margin-left: 0%;
+  width: 550px;
+  left: 0px;
+  background-color: white;
+  display: block;
+
+}
+.tabular h1
+{
+
+  font-size: 16px;
+  margin-left: 0%;
+}
+.table
+{
+  width: 450px;
+ 
+  margin-left: 0px;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  display: block;
+  overflow-x:auto;
+  
+}
+}
+
 	</style>
 </head>
 <body style="background-image: url('https://www.itcompanyindia.in/img/en/It-Company.png');">
@@ -27,42 +87,35 @@
 	<br>
 	<hr>
 
-<div id="id01" class="modal">
+<div class="tabular">
   
-  
-  <form class="modal-content animate" action="http://localhost/app/php/actionpage.php" method="POST">
-    <div class="imgcontainer">
+<table class="table">
+  <form  action="http://localhost/app/php/actionpage.php" method="POST">
+    <tr><td><div class="imgcontainer">
       
       <img src="http://localhost/app/images/img_avatar.png" alt="Avatar" class="avatar" >
-    </div>
+    </div></td></tr>
 
-    <div class="container">
+    
       
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+     <tr><td> <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required></td></tr>
 
-      <label for="psw1"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw1" required>
-
-      <label for="roll"><b>Enter Roll No</b></label>
-      <input type="text" placeholder="Enter Roll No" name="roll" required>
+      <tr><td><label for="psw1"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw1" required></td></tr>
+      <tr><td><label for="roll"><b>Enter Roll No</b></label>
+      <input type="text" placeholder="Enter Roll No" name="roll" required></td></tr>
         
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <tr><td><button type="submit">Login</button></td></tr>
        
-      <a href="#display">change password</a>
+       
+      <tr><td><a href="#display">change password</a></td></tr>
     </div>
   </form>
+</table>
 
-
-
-<form id="display" class="modal-content animate"  action="http://localhost/app/php/login.php" method="POST">
+<table id="display" class="table" border="2px">
+<form   action="http://localhost/app/php/login.php" method="POST">
  <span><center ><h1><u><b>CHANGE PASSWORD</b></u></h1></center></span><br>
   USERNAME:
   <input type="text" name="uname">
@@ -73,8 +126,30 @@
   NEW PASSWORD:
   <input type="text" name="npsw">
 
-  <center><input onclick="changer()" type="submit" name="submit" value="submit"></center>
-  
+  <center><button onclick="changer()" type="submit" name="submit" >CAHNGE</button></center>
+
+
+
+
+<br><br><br>
+<hr>
+<br>
+<br>
+<hr>
+<br>
+<br>
+<hr>
+
+
+
+
+
+
+
+
+</form>
+</table>
+</div>
   <script type="text/javascript">
     function changer()
     {
@@ -105,10 +180,7 @@
     }
     
   </script>
-</form>
-
-</div>
- <div class="footer">
+<div class="footer">
   <p>"FORGOT PASSWORD?"</p>
   <form method="GET" id="fpassword" action="http://localhost/app/php/forgot.php" >
   Username:<input size="4" style="border-radius: 15%;" type="text" name="username">

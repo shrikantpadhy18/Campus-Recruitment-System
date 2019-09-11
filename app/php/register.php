@@ -18,6 +18,66 @@
   font-size: 30px;
   border-radius: 15%;
 }
+.tabular{
+  width: 900px;
+  margin-left: 20%;
+  background-color: white;
+
+}
+.table
+{
+  width: 600px;
+  padding: 25px;
+  margin-left: 20%;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  
+}
+@media screen and (max-width: 650px)
+{
+  
+  #overla p
+  {
+    font-size: 15px;
+  }
+  #overla table
+  {
+    font-size: 10px;
+    
+    margin-left: 1%;
+    font-size: 15px;
+    padding: 0px;
+  }
+  .tabular{
+     position: absolute;
+  margin-left: 0%;
+  width: 550px;
+  left: 0px;
+  background-color: white;
+  display: block;
+
+}
+.tabular h1
+{
+
+  font-size: 16px;
+  margin-left: 0%;
+}
+.table
+{
+  width: 450px;
+ 
+  margin-left: 0px;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  display: block;
+  overflow-x:auto;
+  
+}
+}
+
 	</style>
 </head>
 <body style="background-image: url('https://www.goireland.in/images/companies.jpg');">
@@ -28,20 +88,21 @@
 			<a href="http://localhost/app/html/homepage.html">Back</a>
 	</header>
 
-	<div id="id02" class="modal">
+	<div class="tabular">
+    <table class="table">
   
-  <form name="register" class="modal-content animate" method="POST"  action="" onsubmit ="checkit()" id="formreg">
-    <div class="imgcontainer">
+  <form name="register"  method="POST"  action="" onsubmit ="checkit()" id="formreg">
+    <tr><td><div class="imgcontainer">
       <img src="http://localhost/app/images/img_avatar.png" alt="Avatar" class="avatar" >
-    </div>
+    </div></td></tr>
 
-    <div class="container">
+    <tr><td>
       <label for="uname"><b>Set Username</b></label>
       
       <input onchange="available(this.value)" type="text" placeholder="Enter Username" id="username" name="uname" required>
       
-      <label id="ajax" ></label><br>
-      <label for="psw"><b>Set Password</b></label>
+      <label id="ajax" ></label></td></tr>
+      <tr><td><label for="psw"><b>Set Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
       <ol>
         <li>password should be of minimum 8 and maximum 13 characters length</li>
@@ -50,14 +111,14 @@
         <li>password must have numeric values minimum :5 and naximum :10</li>
         <li>password should start from alphabet['CAPITAL LETTER']</li>
       </ol>
-      <label id="gets1" style="color: red;visibility: hidden;">INVALID PASSWORD</label><br>
+      <label id="gets1" style="color: red;visibility: hidden;">INVALID PASSWORD</label></td></tr>
        
 
-      <label for="name"><b>Your Name</b></label>
+      <tr><td><label for="name"><b>Your Name</b></label>
       <input type="text" placeholder="Enter Name" name="name" required>
-      <label id="gets2" style="color: red;visibility: hidden;">INVALID NAME</label><br>
+      <label id="gets2" style="color: red;visibility: hidden;">INVALID NAME</label></td></tr>
       
-      <br>
+     <tr><td>
       <label for="branch">select branch</label>
       <select id="branch" name="branch" value="branch">
 
@@ -66,26 +127,27 @@
         <option>EX</option>
         <option>EL</option>
         <option>IN</option>
-      </select><br>
+      </select></td></tr>
 
-      <label for="roll"><b>Your Roll Number</b></label>
+      <tr><td><label for="roll"><b>Your Roll Number</b></label>
       <input type="text" placeholder="Enter Roll Number" name="roll" required>
-      <label id="gets3" style="color: red;visibility: hidden;">INVALID ROLLNO</label><br>
+      <label id="gets3" style="color: red;visibility: hidden;">INVALID ROLLNO</label></td></tr>
        
-      <label for="contact"><b>Your Contact Number</b></label>
+      <tr><td><label for="contact"><b>Your Contact Number</b></label>
       <input type="text" placeholder="Enter Contact Number" name="contact" required>
-      <label id="gets4" style="color: red;visibility: hidden;">INVALID NUMBER</label><br>
+      <label id="gets4" style="color: red;visibility: hidden;">INVALID NUMBER</label></td></tr>
        
-      <label for="email"><b>Your Email Id</b></label>
+      <tr><td><label for="email"><b>Your Email Id</b></label>
       <input type="email" placeholder="Enter Email Id" name="email" required>
-      <label id="gets5" style="color: red;visibility: hidden;">INVALID EMAIL</label><br>
+      <label id="gets5" style="color: red;visibility: hidden;">INVALID EMAIL</label></td></tr>
        
         
-      <button onclick="document.getElementById('id02').style.display='block' " type="submit">Register</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
+      <tr><td><button onclick="document.getElementById('id02').style.display='block' " type="submit">Register</button>
+      
+        
         <input type="reset" name="reset" value="reset">
-      </label>
+      </td></tr>
+    </div>
 
   <script type="text/javascript">
    

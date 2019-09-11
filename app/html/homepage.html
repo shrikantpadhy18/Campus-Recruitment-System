@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,24 +20,35 @@
 
  <!-- Compiled and minified CSS -->
      <!-- Compiled and minified CSS -->
-<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>         
+<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>     
+
+<style type="text/css">
+  @media screen and (max-width: 350px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+</style>
+
 </head>
 <body style="background-color: #f0f8ff;">
 
 <div style="background-color:#1aa4b8;" class="jumbotron jumbotron-fluid" id='jumbo'>
   <div class="container">
-    <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-    <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-    <center><h2 ><b>CAMPUS RECRUITMENT DRIVE</h2> </center>
+      <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
+      <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+      <center><h2 ><b>CAMPUS RECRUITMENT DRIVE</h2> </center>
 
-    <div id="overlay" onclick="off()">
-        <h6 onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 75px">ABOUT THE PROJECT</u></b><br>
-  THIS PROJECT IS MADE BY USING HTML,CSS,JAVASCRIPT,
-  BOOTSTRAP IN FRONTEND WHILE BACKEND
-IS MADE BY USING PHP(SERVER SIDE SCRIPTING LANGUAGE)
-,DATABASE SERVER(MYSQL),
-  WEBSERVER (APACHE).</h6>
-    </div>
+      <div id="overlay" onclick="off()">
+          <h6 onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 75px">ABOUT THE PROJECT</u></b><br>
+            THIS PROJECT IS MADE BY USING HTML,CSS,JAVASCRIPT,
+            BOOTSTRAP IN FRONTEND WHILE BACKEND
+          IS MADE BY USING PHP(SERVER SIDE SCRIPTING LANGUAGE)
+          ,DATABASE SERVER(MYSQL),
+            WEBSERVER (APACHE).</h6>
+      </div>
 
   
     
@@ -47,12 +59,13 @@ IS MADE BY USING PHP(SERVER SIDE SCRIPTING LANGUAGE)
       <a  style="background-color: orange" href="#abt" class="btn btn-banner">OUR TEAM<i class="fa fa-send"></i></a>
       <a style="background-color: orange" href="#feedback" class="btn btn-banner">CONTACT OUR TEAM<i class="fa fa-send"></i></a>
   </div>
+
   <div class="header">
 <p><strong>
   <div class="spinner-grow text-light" role="status">
-  <span class="sr-only"></span>
-</div>
-Welcome
+    <span class="sr-only"></span>
+  </div>Welcome
+
 </strong></p> 
 </div>
 
@@ -64,76 +77,37 @@ Welcome
 <br>
 
 <!--Student-->
-<section style="background-image: url('http://localhost/app/images/texture1.jpeg');">
-<ul>
-  
-  <li>
-<div class="row">
-  <div class="column">
-    <div  style="position: relative;left: 150%" id="par" class="card" style="background-color: #00CCFF">
-      
-      <div class="container">
-        
-<h2>This Is  Student Portal</h2>
-
-<a class="btn btn-primary" href="http://localhost/app/php/login.php">Login</a>
-<a class="btn btn-primary" href="http://localhost/app/php/register.php">Register</a>
+<section style="background-image: url('http://localhost/app/images/texture1.jpeg');height: 450px">
 
 
-
-
-<script type="text/javascript">
-  function on() {
-  document.getElementById("overlay").style.display = "block";
-}
-
-function off() {
-  document.getElementById("overlay").style.display = "none";
-}
-</script>
-    </div>
-
-  </form>
-
-
-</div>  
-        
-      </div>
-    </div>
-  </div>
-  
-</li>
-
-
+    <div   class="card" >
+          <h2>This Is  Student Portal</h2>
+          <div class="data">
+          <a class="btn btn-primary" href="http://localhost/app/php/login.php">Login</a>
+          <a class="btn btn-primary" href="http://localhost/app/php/register.php">Register</a>
+        </div>
+    </div>  
 <!--company-->
 
   <br>
-<li>
-<div class="row">
-  <div class="column">
-    <div style="position: relative; left: 150%" id="par" class="card" style="background-color: #00CCFF">
-      
-      <div class="container">
-      
-        
-<h2>This Is  Company Portal</h2>
+<div  class="card" > 
+  <h2>This Is  Company Portal</h2>
+  <div class="data">
+  <a href="http://localhost/app/html/companylogin.html" class="btn btn-primary">Company Login</a>
+  </div>
+</div>
 
-<a href="http://localhost/app/html/companylogin.html" class="btn btn-primary">Company Login</a>
-</li>
 <br>
 
-<li>
-<div class="row">
-  <div class="column">
-    <div  style="position: relative;left: 150%;" id="par" class="card">
-      
-      <div class="container">
-        
-<h2>This Is  Administrator  Portal</h2>
 
-<a href="http://localhost/app/html/adminlogin.html" class="btn btn-primary">Admin Login</a>
-</li>
-</ul>
+  <div    class="card">
+      <h2>This Is  Administrator  Portal</h2>
+        <div class="data">
+          <a href="http://localhost/app/html/adminlogin.html" class="btn btn-primary">Admin Login</a>
+        </div>
+  </div>
+
+
 </section>
 
 
@@ -157,21 +131,24 @@ function off() {
 
 <div class='team' id='abt'>
   <div>
-    <img class="img1" src="http://localhost/app/images/shrikant.jpg" style="height:280px;">
-    <div class="details">
-      <h3>MR. SHRIKANT PADHY</h3>
-    <h4>STUDENT OF R.A.I.T</h4>
-    <h5>CURIOUS LEARNER</h5>
-    <a style="position: relative;" href="https://github.com/shrikantpadhy18" class="fa fa-github"></a>
-        <a style="position: relative;left: 12px" href="https://www.linkedin.com/in/shrikant-padhy-9b937317b/" class="fa fa-linkedin"></a>
-        <a style="position: relative;left: 22px" href="https://www.quora.com/profile/Shrikant-Trilochan-Padhy" class="fa fa-quora"></a>
+    
+    <div><img class="img1" src="http://localhost/app/images/shrikant.jpg" style="height:280px;"></div>
+  
+        <div class="details">
+          <h3>MR. SHRIKANT PADHY</h3>
+        <h4>STUDENT OF R.A.I.T</h4>
+        <h5>CURIOUS LEARNER</h5>
+        <a style="position: relative;" href="https://github.com/shrikantpadhy18" class="fa fa-github"></a>
+            <a style="position: relative;left: 12px" href="https://www.linkedin.com/in/shrikant-padhy-9b937317b/" class="fa fa-linkedin"></a>
+            <a style="position: relative;left: 22px" href="https://www.quora.com/profile/Shrikant-Trilochan-Padhy" class="fa fa-quora"></a>
 
-    </div>
+        </div>
   </div>
+  
 <br>
 
   <div >
-    <img class="img1" src="http://localhost/app/images/vicky.jpg" style="height:280px;">
+    <div><img class="img1" src="http://localhost/app/images/vicky.jpg" style="height:280px;"></div>
     <div class="details">
     <h3>MR. VICKY MISHRA</h3>
     <h4>STUDENT OF R.A.I.T</h4>
@@ -185,7 +162,15 @@ function off() {
 </center>
 
 
+<script type="text/javascript">
+  function on() {
+  document.getElementById("overlay").style.display = "block";
+}
 
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
 
 <!--feedback-->
 
