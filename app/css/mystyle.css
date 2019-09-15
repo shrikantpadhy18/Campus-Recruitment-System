@@ -29,6 +29,17 @@
 
 
 }
+
+.card1{
+  
+  
+  padding: 2px;
+  align-items: center;
+  
+  width: 350px;
+
+
+}
 @media screen and (max-width: 700px)
 {
   .card
@@ -41,6 +52,7 @@
    font-size: 8px;
    
   }
+   
   .details
   {
     width:420px;

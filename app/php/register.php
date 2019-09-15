@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>  
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">       
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="http://localhost/app/js/ajax.js"></script>
+<script src="http://192.168.43.122/app/js/ajax.js"></script>
 
 	<title></title>
 	<style type="text/css">
@@ -84,14 +84,14 @@
 	<header style="background-color: #006db0;" class="header" id="jumbo">
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
 		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-
+      
 			<a href="http://localhost/app/html/homepage.html">Back</a>
 	</header>
 
 	<div class="tabular">
     <table class="table">
   
-  <form name="register"  method="POST"  action="" onsubmit ="checkit()" id="formreg">
+  <form name="register"  method="POST"  action="#" onsubmit ="checkit()" id="formreg">
     <tr><td><div class="imgcontainer">
       <img src="http://localhost/app/images/img_avatar.png" alt="Avatar" class="avatar" >
     </div></td></tr>
@@ -103,7 +103,7 @@
       
       <label id="ajax" ></label></td></tr>
       <tr><td><label for="psw"><b>Set Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+      <input onchange="checkit()" type="password" placeholder="Enter Password" name="psw" required>
       <ol>
         <li>password should be of minimum 8 and maximum 13 characters length</li>
         <li>password should contain one uppercase letter and one lower case letter</li>

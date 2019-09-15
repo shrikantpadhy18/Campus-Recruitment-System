@@ -40,12 +40,45 @@
   	color: white;
   	font-size: 30px;
 }
-table
-{
-	padding: 20px;
-	margin :10px;
-}
+.tabular{
+  width: 900px;
+  margin-left: 20%;
+  background-color: white;
 
+}
+.card:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+@media screen and (max-width: 650px)
+{
+      .tabular{
+     position: absolute;
+  margin-left: 0%;
+  width: 550px;
+  left: 0px;
+  background-color: white;
+  display: block;
+
+}
+.tabular h1
+{
+
+  font-size: 16px;
+  margin-left: 0%;
+}
+#overla p
+  {
+    font-size: 15px;
+  }
+  #overla table
+  {
+    font-size: 10px;
+    
+    margin-left: 1%;
+    font-size: 15px;
+    padding: 0px;
+  }
+}
 </style>
 
 </head>
@@ -60,9 +93,10 @@ table
 
 	<hr>
 	<center> <b style="color: yellow;font-size: 25px;text-decoration: underline;"><?php	echo "YOUR ROLL NO=". $_SESSION['roll'] ."\n YOUR USERNAME=" .$_SESSION['susername']; ?></b></center>
+    <br>
 
-	 <div id="overlay" onclick="off()">
-        <h6 onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 45px">LIST OF COMPANY</u></b><br>
+	 <div id="overla" ondblclick="off()" style="overflow-x:auto;">
+       <p style="font-size: 25px;z-index: 1;cursor: pointer;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text">
         <?php
         $row=0;
         $con=mysqli_connect('localhost:3308','root');
@@ -137,16 +171,16 @@ table
 
         ?>
     </table>
-  	</h6>
+  	</p>
     </div>
 
     <script type="text/javascript">
   function on() {
-  document.getElementById("overlay").style.display = "block";
+  document.getElementById("overla").style.display = "block";
 }
 
 function off() {
-  document.getElementById("overlay").style.display = "none";
+  document.getElementById("overla").style.display = "none";
 }
 </script>
 
@@ -154,71 +188,61 @@ function off() {
     
     
 
-
-	<div class="row">
-  <div class="column">
-    <div  style="position: relative;left: 50%" id="par" class="card" style="background-color: #00CCFF">
+<div class="tabular">
+	
+    <div class="card"    style="background-color: #00CCFF">
       
-      <div class="container">
+      
         
 <h2>BUILD YOUR PROFILE HERE</h2>
-
+<div class="data">
 <a class="btn btn-primary" href="http://localhost/app/php/sprofilecreate.php">CREATE PROFILE</a>
-
-</div>
-</div>
 </div>
 </div>
 <br>
 <br>
 
 
-<div class="row">
-  <div class="column">
-    <div  style="position: relative;left: 200%" id="par" class="card" style="background-color: #00CCFF">
+
+    <div class="card"  style="background-color: #00CCFF;">
       
-      <div class="container">
+     
         
 <h2>SEE ELIGIBILITY CRITERIA</h2>
-
+ <div class="data">
 <a class="btn btn-primary" href="#">CHECK CRITERIA</a>
 
-</div>
-</div>
+
 </div>
 </div>
 <br>
 <br>
 
-<div class="row">
-  <div class="column">
-    <div  style="position: relative;left: 50%" id="par" class="card" style="background-color: #00CCFF">
+
+    <div class="card"   style="background-color: #00CCFF;">
       
-      <div class="container">
+      
         
 <h2>CHECK THE LIST OF COMPANY VISITING</h2>
-
+<div class="data">
 <a class="btn btn-primary" href="#" onclick="on()">Company Details</a>
 
 </div>
 </div>
-</div>
-</div>
+
 
 <br>
 <br>
 
-<div class="row">
-  <div class="column">
-    <div  style="position: relative;left: 200%" id="par" class="card" style="background-color: #00CCFF">
+
+    <div class="card"   style="background-color: #00CCFF;">
       
-      <div class="container">
+      
         
 <h2>UPDATE PROFILE</h2>
+<div class="data">
 
 <a class="btn btn-primary" href="http://localhost/app/php/sprofilecreate.php" name="edit" value="edit">EDIT PROFILE</a>
-
-</div>
 </div>
 </div>
 </div>

@@ -112,7 +112,7 @@
       <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
       <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
       <center><h2 ><b>CAMPUS RECRUITMENT DRIVE</h2> </center>
-        <a style="right:5px;background-color: orange;" href="http://localhost//app/php/logoutcp.php" class="btn btn-primary" >LOGOUT</a>
+        <a style="right:5px;background-color: orange;" href="http://localhost/app/php/logoutcp.php" class="btn btn-primary" >LOGOUT</a>
   
   </div>
 </div>

@@ -43,35 +43,68 @@ if (!isset($_SESSION['roll'])) {
   	font-size: 30px;
   	
 }
+.tabular{
+  width: 900px;
+  margin-left: 20%;
+  background-color: white;
+
+}
 .table
 {
-	position: absolute;
-	left: 45%;
-	width: 700px;
-	height: 40%;
-	background-image:url('https://www.sciencenews.org/wp-content/uploads/2018/05/050318_ec_timecrystal_feat_free.jpg');
-	color: red;
-	z-index: 3;
+  width: 600px;
+  padding: 25px;
+  margin-left: 20%;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  
 }
-.form1
+.table input
 {
-	position: absolute;
-	left: 2%;
-	color: red;
-	width: 350px;
-	border-style: none;
-	background-image:url('https://www.sciencenews.org/wp-content/uploads/2018/05/050318_ec_timecrystal_feat_free.jpg');
+	border-radius: 2px;
 }
+@media screen and (max-width: 650px)
+{
+  
+  #overla p
+  {
+    font-size: 15px;
+  }
+  #overla table
+  {
+    font-size: 10px;
+    
+    margin-left: 1%;
+    font-size: 15px;
+    padding: 0px;
+  }
+  .tabular{
+     position: absolute;
+  margin-left: 0%;
+  width: 550px;
+  left: 0px;
+  background-color: white;
+  display: block;
 
-.form2
+}
+.tabular h1
 {
-	position: absolute;
-	left: 2%;
-	bottom: 25%;
-	color: red;
-	width: 350px;
-	border-style: none;
-	background-image:url('https://www.sciencenews.org/wp-content/uploads/2018/05/050318_ec_timecrystal_feat_free.jpg');
+
+  font-size: 16px;
+  margin-left: 0%;
+}
+.table
+{
+  width: 450px;
+ 
+  margin-left: 0px;
+  margin-top:20px;
+  background-color: orange;
+  border-radius: 2px;
+  display: block;
+  overflow-x:auto;
+  
+}
 }
 
 </style>
@@ -106,10 +139,10 @@ if (!isset($_SESSION['roll'])) {
 	</header>
 <a href="http://localhost/app/php/logoutst.php" >LOGOUT</a>
 	<p style="text-align: center; text-shadow: rgb(120,120,112,0.4);"><?php echo $name;?></p>
-	
+<div class="tabular">	
 	<table border="2px" class="table">
 	<form action="http://localhost/app/php/sprofilecreate.php" method="POST"  name="profile">
-		<div class="container">
+		
 		<tr><td>YOUR NAME:
 		<input type="text" name="stname" placeholder="ENTER NAME" value=<?php echo "'$name'"; ?>  readonly></td></tr>
 
@@ -144,9 +177,10 @@ if (!isset($_SESSION['roll'])) {
 		</td></tr>
 		<tr><td><center><input type="submit" name="sub" value="ENTER" class="btn btn-primary" onclick="caller()">
 		<input type="submit" name="edit" value="EDIT" class="btn btn-primary"></td></tr></center>
-	</div>
+	
 	</form>
 </table>
+
 <?php
 $row=0;
 $con=mysqli_connect('localhost:3308','root');
@@ -221,7 +255,7 @@ if($row and isset($_POST['edit']))
 
 	</script>
 
-	<table  class="form1">
+	<table  class="table">
 	<form method="POST" action=""  enctype="multipart/form-data">
 		
 			<h6>UPLOAD RESUME IN PDF FORMAT ONLY</h6>
@@ -237,24 +271,9 @@ if($row and isset($_POST['edit']))
 		
 	</form>
 	</table>
+	</div>
 
-	<table  class="form2">
-
-	<form method="POST" action="" >
-		<tr>
-			<td><h6>DELETE YOUR UPLOADED RESUME!</h6></td>
-		</tr>
-		
-			
-			<tr>
-				<td><input type="text" name="roller" value=<?php echo "$x";?> readonly></td>
-			</tr>
-			<tr>
-				<center><td><input class="btn btn-primary"  type="submit" value="delete" name="delete"></td></center>
-			</tr>
-		
-	</form>
-	</table>
+	
 	
 
 			<?php
@@ -270,29 +289,18 @@ if($row and isset($_POST['edit']))
 			$allowed=array('pdf');
 
 		
-			$folder="C:/wamp64/www/app/student/"."$roll".$name;
+			$folder="C:/wamp64/www/app/student/"."$x".$name;
 			
 			if(move_uploaded_file($tempname, $folder) and $name!='' and in_array($extension, $allowed))
 			{
 				$con=mysqli_connect('localhost:3308','root');
 				mysqli_select_db($con,'db3');
-				$check="select * from resume where roll='$roll' ";
-				$checker=mysqli_query($con,$check);
-				$row=mysqli_num_rows($checker);
 				
 
-				$q="insert into resume(roll,image) values('$roll','$folder')";
-				if($row==0){
+				$q="update studprofile set image='$folder' where roll ='$x' ";
+				
 				$result=mysqli_query($con,$q);
-				}
-				else
-				{
-					?>
-					<script type="text/javascript">
-						alert("you already have uploaded the resume");
-					</script>
-					<?php
-				}
+			
 				if($result)
 				{
 					?>
@@ -323,51 +331,7 @@ if($row and isset($_POST['edit']))
 			
 			?>
 
-			<?php
-			$result=0;
-			$con=mysqli_connect('localhost:3308','root');
-			mysqli_select_db($con,'db3');
-			if(isset($_POST['delete']))
-			{
-
-			$check="select * from resume roll='$x' ";
-			$out=mysqli_query($con,$check);
-			if($out)
-			{
-
-			$z="delete from resume where roll='$x' ";
-
-			$result=mysqli_query($con,$z);
-			}
-			else
-			{
-				?>
-				<script type="text/javascript">
-					alert('you dont have any resume uploaded yet');
-				</script>
-				<?php
-			}
-				if($result)
-				{
-					?>
-					<script type="text/javascript">
-						alert('SUCCESSFULLY DELETED');
-					</script>
-					<?php
-				}
-				else
-				{
-					?>
-					<script type="text/javascript">
-						alert("DELETION FAILED,TRY AGAIN");
-					</script>
-					<?php
-				}
-
-			}
-
-			?>
-
+			
 </script>
 </body>
 

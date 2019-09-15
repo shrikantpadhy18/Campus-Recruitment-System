@@ -11,7 +11,7 @@
 	$data=$_POST['search'];
 	$con=mysqli_connect('localhost:3308','root');
 	mysqli_select_db($con,'db3');
-	$q="select * from resume where roll='$data' ";
+	$q="select * from studprofile where roll='$data' ";
 	$result=mysqli_query($con,$q);
 	$out=mysqli_fetch_array($result);
 	$std=$out['image'];

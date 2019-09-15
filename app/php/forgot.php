@@ -27,8 +27,6 @@ session_start();
    ?>
    
    <?php
- 
-    
   }
   else
   {

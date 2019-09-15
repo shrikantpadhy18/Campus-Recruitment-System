@@ -23,10 +23,58 @@
 <link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>     
 
 <style type="text/css">
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 600px) {
   .column {
     width: 100%;
     display: block;
+  }
+}
+.card1:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.card:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 19px;
+  margin-left: 89px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card1 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
 }
 
@@ -93,7 +141,7 @@
 <div  class="card" > 
   <h2>This Is  Company Portal</h2>
   <div class="data">
-  <a href="http://localhost/app/html/companylogin.html" class="btn btn-primary">Company Login</a>
+  <a href="hhttp://localhost/app/html/companylogin.html" class="btn btn-primary">Company Login</a>
   </div>
 </div>
 
@@ -110,6 +158,36 @@
 
 </section>
 
+<center>
+  <h2 style="color:#0000FF">SERVICES OF THREE VIEWS</h2>
+</center>
+<br>
+
+
+
+<div class="row">
+  <div class="column">
+    <div class="card1">
+      <h1>Student</h1>
+      <p>Student can login to site by creating an account.After login student can fill their academics details alongwith the skills which they had acquired during their academic curriculum and upload their resume.</p><br><br>
+      <br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card1">
+      <h1>Company</h1>
+      <p>Company can login to their portal and visit the site.They can set the details required to pass their eligibility criteria.By entering the criteria company can watch the details of student,their resume and also they can send an email to the desired candidates.</p><br><br>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card1">
+      <h1>Admin</h1>
+      <p>Admin has the right to see the credentials of both company and student.Admin is entrusted with the responsibility of creating and deleting the company ID and password. Admin can also delete the fake accounts of student,After which student will be informed through an email instantaneously</p>
+    </div>
+  </div>
+  
+</div>
+<br>
 
 <!--slideshow-->
 

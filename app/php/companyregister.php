@@ -30,26 +30,78 @@ if(!isset($_SESSION['aid']))
   	font-size: 30px;
 }
 
-table
-{
-  position: absolute;
-  left: 5%;
-  bottom: 20%;
-  width: 300px;
-  background-image: url('https://www.sbsgroup.com.sg/wp-content/uploads/Register-Cleaning-Company-in-Singapore.jpg');
-  float: left;
+.tabular{
+  width: 900px;
+  margin-left: 20%;
+  background-color: white;
+
 }
+.table
+{
+  width: 600px;
+  padding: 25px;
+  margin-left: 20%;
+  margin-top:20px;
+  background-image: url('http://www.sfdcpoint.com/wp-content/uploads/2019/01/Salesforce-Admin-Interview-questions.png');
+  border-radius: 2px;
+  
+}
+@media screen and (max-width: 650px)
+{
+  
+  #overla p
+  {
+    font-size: 15px;
+  }
+  #overla table
+  {
+    font-size: 10px;
+    
+    margin-left: 1%;
+    font-size: 15px;
+    padding: 0px;
+  }
+  .tabular{
+     position: absolute;
+  margin-left: 0%;
+  width: 550px;
+  left: 0px;
+  background-color: white;
+  display: block;
+
+}
+.tabular h1
+{
+
+  font-size: 16px;
+  margin-left: 0%;
+}
+.table
+{
+  width: 450px;
+ 
+  margin-left: 0px;
+  margin-top:20px;
+  background-image: none;
+  background-color: orange;
+  border-radius: 2px;
+  display: block;
+  overflow-x:auto;
+  
+}
+} 
 </style>
 
 </head>
 <body style="background-image: url('http://www.royalresearch.asia/wp-content/uploads/2016/11/Admin-resized-2.jpg');">
-<header style="background-color: #006db0;" class="header">
+<header style="background-color: #006db0;" class="header" id='jumbo'>
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
 		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
 			<a href="http://localhost/app/php/logout.php" >LOGOUT</a>
 
 	</header>
 <p style="text-align: right;color: yellow;font-size: 25px">Hello <?php echo $_SESSION['aid']; ?></p>
+<a style="text-align: left;"  href="http://localhost/app/php/studentrecord.php">STUDENT DETAILS?</a>
 <script type="text/javascript">
 		function creation()
 		{
@@ -68,51 +120,28 @@ table
 
 
 	
-		<div style="font-size: 29px">
-		<center><b><u>ADMIN VIEW</u><b></center>
-	</div>
-		
-	<form  style="height: 400px;font-size: 35px;background-image: url('http://www.sfdcpoint.com/wp-content/uploads/2019/01/Salesforce-Admin-Interview-questions.png');"  id="form" class="modal-content animate" method="POST" action="http://localhost/app/php/delete.php">
+		<div class="tabular">
+
+			<h1>Admin View</h1>
+			<table class="table">
+	<form  style="height: 400px;font-size: 35px;"  id="form" class="modal-content animate" method="POST" action="http://localhost/app/php/delete.php">
 	
-		<br>
-	<label for="cid">SET COMPANY ID</label>
+		
+	<tr><td><label for="cid">SET COMPANY ID</label>
 	<input type="text" name="cid" placeholder="enter company id" required>
-	<br>
-	<label for="psw">SET COMPANY PASSWORD</label>
+	</td></tr>
+	<tr><td><label for="psw">SET COMPANY PASSWORD</label>
 	<input type="password" name="psw" placeholder="enter password" required>
-	<br>
-	<center>
+	</td></tr>
+	<tr><td><center>
 		
 	<input class="btn-btn-primary" id="create" type="submit" value="create" name="create" onclick="creation()">
 	<input class="btn-btn-primary" id="delete" type="submit" value="delete" name="delete" onclick="deletion()">
-	</center>
+	</center></td></tr>
 	</form>
-   
-	<table style="position:absolute;top: 65%;height: 300px;background-image: url('https://img.freepik.com/free-photo/closeup-elegant-crumpled-white-silk-fabric-cloth-texture_50039-909.jpg?size=626&ext=jpg');">
-
-		<?php
-		$row=0;
-			$con=mysqli_connect('localhost:3308','root');
-			mysqli_select_db($con,'db3');
-			$q="select * from feed";
-			$result=mysqli_query($con,$q);
-			if($result)
-			{
-				$row=mysqli_num_rows($result);
-
-			}
-			for($i=1;$i<=$row;$i++)
-			{
-			$out =mysqli_fetch_array($result);
-			?>
-				<tr><td><marquee direction="up" height=300><p>ID:<?php echo $i;?>,Name:<?php echo $out['name']; ?>,message=<?php echo $out['message']; ?>,email=<?php echo $out['email'] ?> </p> </marquee></td></tr>
-			<?php
-		}
-		?>
 </table>
+   
 	
-
-
 
 <?php
 
@@ -131,8 +160,8 @@ if($num)
 	?>
 
 	
-		<table style="position:absolute;left: 80%;bottom: 30%" border="2px">
-
+		<table  border="2px" class="table">
+			<h1>Company Detail</h1>
 			<tr>
 
 				<th>
@@ -171,6 +200,8 @@ if($num)
 
 
 
+</div>
+
 <br>
 <br>
 <br>
@@ -179,7 +210,10 @@ if($num)
 
 <div class="footer">
   <p>"knowledge is power"</p>
- 
+
+	
+
+
 </div>
 </body>
 </html>
