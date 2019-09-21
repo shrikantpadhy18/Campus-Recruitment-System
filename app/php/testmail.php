@@ -39,6 +39,7 @@ else
 {
 	?>
 	<script type="text/javascript">
+		
 		alert("oops! mail couldn't be sent,try again");
 		document.getElementById('form').action="http://localhost/app/php/dashboard.php";
 		document.getElementById('form').submit();

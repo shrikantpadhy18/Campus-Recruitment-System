@@ -8,89 +8,15 @@ if(!isset($_SESSION['aid']))
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>   
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>  
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/companyregister.css"/>   
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Latest compiled and minified CSS -->
-
-
-
-
-	
 	<title>
 		company_account 
 	</title>
-	<style type="text/css">
-		.header {
- 	 padding: 60px;
-  	text-align: center;
-  	background: #1abc9c;
-  	color: white;
-  	font-size: 30px;
-}
-
-.tabular{
-  width: 900px;
-  margin-left: 20%;
-  background-color: white;
-
-}
-.table
-{
-  width: 600px;
-  padding: 25px;
-  margin-left: 20%;
-  margin-top:20px;
-  background-image: url('http://www.sfdcpoint.com/wp-content/uploads/2019/01/Salesforce-Admin-Interview-questions.png');
-  border-radius: 2px;
-  
-}
-@media screen and (max-width: 650px)
-{
-  
-  #overla p
-  {
-    font-size: 15px;
-  }
-  #overla table
-  {
-    font-size: 10px;
-    
-    margin-left: 1%;
-    font-size: 15px;
-    padding: 0px;
-  }
-  .tabular{
-     position: absolute;
-  margin-left: 0%;
-  width: 550px;
-  left: 0px;
-  background-color: white;
-  display: block;
-
-}
-.tabular h1
-{
-
-  font-size: 16px;
-  margin-left: 0%;
-}
-.table
-{
-  width: 450px;
- 
-  margin-left: 0px;
-  margin-top:20px;
-  background-image: none;
-  background-color: orange;
-  border-radius: 2px;
-  display: block;
-  overflow-x:auto;
-  
-}
-} 
-</style>
+	
 
 </head>
 <body style="background-image: url('http://www.royalresearch.asia/wp-content/uploads/2016/11/Admin-resized-2.jpg');">

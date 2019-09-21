@@ -5,6 +5,9 @@ session_start();
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.css">      
+  <!-- Latest compiled and minified CSS -->
+  <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
 	<?php
@@ -28,9 +31,17 @@ session_start();
 				<form id="reverse" action="#">
 
 					<script type="text/javascript">
-					alert("YOUR CREDENTIALS DON'T MATCH ANY EXISTING RECORD!");
-					revert();
-
+					Swal.fire(				
+						{
+							title:'LOGIN DETAILS OF COMPANY',
+							text:"YOUR CREDENTIALS DONT MATCH ANY EXISTING RECORD",
+							confirmButtonText: 'TRY AGAIN',
+							type:'error',
+							
+						}
+						)
+						
+						setTimeout(revert,3000);
 					function revert()
 					{
 						document.getElementById('reverse').action='http://localhost/app/html/companylogin.html';
@@ -52,8 +63,18 @@ session_start();
 				?>
 				<form id="ahead" action="#">
 					<script type="text/javascript">
-						alert("YOU ARE SUCCESSFULLY LOGGED IN!!");
-						ahead();
+						Swal.fire(
+						{
+						title:'LOGIN DETAILS FOR ADMIN',
+						text:"YOUR ARE SUCCESSFULLY LOGGED IN",
+						confirmButtonText: 'PROCEED',
+						type:'success',
+						
+						}
+						)
+						
+						
+						setTimeout(ahead,3000);
 
 					function ahead()
 					{

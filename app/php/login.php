@@ -3,79 +3,13 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>   
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">      
+  <link rel="stylesheet" type="text/css" href="http://localhost/app/css/login.css"/>   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.css">      
   <!-- Latest compiled and minified CSS -->
-
+  <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 	<title></title>
-	<style type="text/css">
-		.header {
- 	 padding: 60px;
-  	text-align: center;
-  	background: #1abc9c;
-  	color: white;
-  	font-size: 30px;
-}
-.tabular{
-  width: 900px;
-  margin-left: 20%;
-  background-color: white;
-
-}
-.table
-{
-  width: 600px;
-  padding: 25px;
-  margin-left: 20%;
-  margin-top:20px;
-  background-color: orange;
-  border-radius: 2px;
-  
-}
-@media screen and (max-width: 650px)
-{
-  
-  #overla p
-  {
-    font-size: 15px;
-  }
-  #overla table
-  {
-    font-size: 10px;
-    
-    margin-left: 1%;
-    font-size: 15px;
-    padding: 0px;
-  }
-  .tabular{
-     position: absolute;
-  margin-left: 0%;
-  width: 550px;
-  left: 0px;
-  background-color: white;
-  display: block;
-
-}
-.tabular h1
-{
-
-  font-size: 16px;
-  margin-left: 0%;
-}
-.table
-{
-  width: 450px;
- 
-  margin-left: 0px;
-  margin-top:20px;
-  background-color: orange;
-  border-radius: 2px;
-  display: block;
-  overflow-x:auto;
-  
-}
-}
-
-	</style>
+	
 </head>
 <body style="background-image: url('https://www.itcompanyindia.in/img/en/It-Company.png');">
 	<header style="background-color: #006db0;" class="header" id="jumbo">
@@ -167,13 +101,29 @@
       if($result)
       {
         ?>
-        alert("UPDATION DONE CAREFULLY");
+
+
+        Swal.fire(
+            {
+            title:'ACCOUNT UPDATION DETAIL',
+            text:"YOUR ACCOUNT UPDATION HAS BEEN SUCCESSFUL!",
+            type:'success',
+            timer:3500
+            }
+            )
         <?php
       }
       else
       {
         ?>
-        alert("UPDATION FAILED,TRY AGAIN");
+        Swal.fire(
+            {
+            title:'ACCOUNT UPDATION DETAIL',
+            text:"YOUR ACCOUNT UPDATION HAS FAILED",
+            type:'error',
+            timer:3500
+            }
+            )
         <?php
       }
       ?>

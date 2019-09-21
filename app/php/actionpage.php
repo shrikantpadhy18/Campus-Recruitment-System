@@ -5,7 +5,8 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>         
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>  
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.css">     
 
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<title>LOGIN</title>
@@ -21,7 +22,7 @@ session_start();
 			$_SESSION['susername']=$uname;
 			$_SESSION['roll']=$roll;
 
-			echo $_SESSION['roll'];
+			
 			$con=mysqli_connect('localhost:3308','root');
 			mysqli_select_db($con,'db3');
 			$q="select * from register1 where username='$uname' and roll='$roll' and password='$psw'";
@@ -35,16 +36,26 @@ session_start();
 				?>	
 				<form id="reverse" action="#">
 
-					<script type="text/javascript">
-					alert("YOUR CREDENTIALS DON'T MATCH ANY EXISTING RECORD!");
-					revert();
+					<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+						<script>
+						Swal.fire(				
+						{
+							title:'LOGIN DETAILS',
+							text:"YOUR CREDENTIALS DONT MATCH ANY EXISTING RECORD",
+							confirmButtonText: 'TRY AGAIN',
+							type:'error',
+							
+						}
+						)
+						
+						setTimeout(revert,3000);
 
-					function revert()
-					{
-						document.getElementById('reverse').action='http://localhost/app/php/login.php';
-						document.getElementById('reverse').submit();
-					}
-				</script>
+						function revert()
+						{
+							document.getElementById('reverse').action='http://localhost/app/php/login.php';
+							document.getElementById('reverse').submit();
+						}
+					</script>
 				</form>
 
 				<?php
@@ -55,9 +66,20 @@ session_start();
 			{
 				?>
 				<form id="ahead" action="#">
-					<script type="text/javascript">
-						alert("YOU ARE SUCCESSFULLY LOGGED IN!!");
-						ahead();
+					<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+						<script>
+						Swal.fire(
+						{
+						title:'LOGIN DETAILS',
+						text:"YOUR ARE SUCCESSFULLY LOGGED IN",
+						confirmButtonText: 'PROCEED',
+						type:'success',
+						
+						}
+						)
+						
+						
+						setTimeout(ahead,3000);
 
 					function ahead()
 					{

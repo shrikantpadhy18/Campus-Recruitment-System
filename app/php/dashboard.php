@@ -119,7 +119,8 @@
   <center><h6>COMPANY VIEW</h6></center><br>
 
  <div id="overla" ondblclick="off()" style="overflow-x:auto;">
-        <p style="font-size: 25px;z-index: 1;cursor: pointer;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 25px"></u></b><br>
+        <p style="font-size: 25px;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 25px"></u></b><br>
+      
   <?php
     $rowss=0;
     $result=0;
@@ -130,7 +131,7 @@
   
     $con=mysqli_connect('localhost:3308','root');
     mysqli_select_db($con,'db3');
-    $q="select * from studprofile where cgpi>=$search1 and designation LIKE  '%$search2%' ";
+    $q="select * from studprofile where cgpi>=$search1 and designation LIKE '%$search2%' ";
     $result=mysqli_query($con,$q);
   }
     if($result)
@@ -240,21 +241,12 @@
         }
         
         ?>
+
     </table>
     </p>
+
     </div>
-    </table>
-
-  <script type="text/javascript">
-  function on() {
-  document.getElementById("overla").style.display = "block";
-}
-
-function off() {
-  document.getElementById("overla").style.display = "none";
-}
- 
-</script>
+    
 
 <div class="tabular">
 
@@ -266,7 +258,9 @@ function off() {
    <tr><td> <center><input type="submit" name="submit3" value="STUDENT DETAILS" class="btn btn-primary" onclick="on()" style="padding-top: 10px;margin-top: 20px"></center></td></tr>
   
   </form>
+</table>
   <hr>
+
 
 
  
@@ -282,8 +276,8 @@ function off() {
   <tr><td>cgpi required:<input style="margin-top: 20px" type="number" placeholder="cgpi needed" name="cgpi" required></td></tr>
   <tr><td>ssc percentage:<input style="margin-top: 20px" type="number" name="ssc" placeholder="ssc %" required></td></tr>
   <tr><td>hsc percentage:<input style="margin-top: 20px" type="number" name="hsc" placeholder="hsc %" required></td></tr>
-  <tr><td>package:<input style="margin-top: 20px" type="text" name="package" placeholder="package" required></td></tr>
-  <tr><td><center><input type="submit" name="submit2" value="SET CREDENTIALS" class="btn btn-primary" onclick="fun()"></center></td></tr>
+  <tr><td>package:<input style="margin-top: 20px" type="text" name="package" placeholder="package"  required></td></tr>
+  <tr><td><center><input type="submit" name="submit2" value="SET CREDENTIALS" class="btn btn-primary" onclick="fun()" required></center></td></tr>
   <br>
   <hr>
 

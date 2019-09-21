@@ -4,81 +4,13 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>  
+  <link rel="stylesheet" type="text/css" href="http://localhost/app/css/register.css"/>  
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">       
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="http://192.168.43.122/app/js/ajax.js"></script>
 
 	<title></title>
-	<style type="text/css">
-		.header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
-  border-radius: 15%;
-}
-.tabular{
-  width: 900px;
-  margin-left: 20%;
-  background-color: white;
-
-}
-.table
-{
-  width: 600px;
-  padding: 25px;
-  margin-left: 20%;
-  margin-top:20px;
-  background-color: orange;
-  border-radius: 2px;
-  
-}
-@media screen and (max-width: 650px)
-{
-  
-  #overla p
-  {
-    font-size: 15px;
-  }
-  #overla table
-  {
-    font-size: 10px;
-    
-    margin-left: 1%;
-    font-size: 15px;
-    padding: 0px;
-  }
-  .tabular{
-     position: absolute;
-  margin-left: 0%;
-  width: 550px;
-  left: 0px;
-  background-color: white;
-  display: block;
-
-}
-.tabular h1
-{
-
-  font-size: 16px;
-  margin-left: 0%;
-}
-.table
-{
-  width: 450px;
- 
-  margin-left: 0px;
-  margin-top:20px;
-  background-color: orange;
-  border-radius: 2px;
-  display: block;
-  overflow-x:auto;
-  
-}
-}
-
-	</style>
+	
 </head>
 <body style="background-image: url('https://www.goireland.in/images/companies.jpg');">
 	<header style="background-color: #006db0;" class="header" id="jumbo">

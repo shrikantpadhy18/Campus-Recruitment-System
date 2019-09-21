@@ -7,6 +7,9 @@ session_start();
 	<title>
 		ADMIN PORTAL
 	</title>
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.css">      
+  <!-- Latest compiled and minified CSS -->
+  <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
 <?php
@@ -34,8 +37,19 @@ if($num==0)
 				<form id="reverse" action="#">
 
 					<script type="text/javascript">
-					alert("YOUR CREDENTIALS DON'T MATCH ANY EXISTING RECORD!");
-					revert();
+						Swal.fire(				
+						{
+							title:'LOGIN DETAILS OF ADMIN',
+							text:"YOUR CREDENTIALS DONT MATCH ANY EXISTING RECORD",
+							confirmButtonText: 'TRY AGAIN',
+							type:'error',
+							
+						}
+						)
+						
+						setTimeout(revert,3000);
+					
+					
 
 					function revert()
 					{
@@ -55,9 +69,18 @@ if($num==0)
 				?>
 				<form id="ahead" action="#">
 					<script type="text/javascript">
-						alert("YOU ARE SUCCESSFULLY LOGGED IN!!");
-						ahead();
-
+						Swal.fire(
+						{
+						title:'LOGIN DETAILS FOR ADMIN',
+						text:"YOUR ARE SUCCESSFULLY LOGGED IN",
+						confirmButtonText: 'PROCEED',
+						type:'success',
+						
+						}
+						)
+						
+						
+						setTimeout(ahead,3000);
 					function ahead()
 					{
 						document.getElementById('ahead').action='http://localhost/app/php/companyregister.php';

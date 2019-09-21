@@ -10,23 +10,14 @@ if (!isset($_SESSION['roll'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>   
+	  
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/sprofilecreate.css"/>   
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Latest compiled and minified CSS -->
- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
  <!-- Compiled and minified CSS -->
      <!-- Compiled and minified CSS -->
@@ -34,87 +25,14 @@ if (!isset($_SESSION['roll'])) {
 	<title>
 		student section
 	</title>
-	<style type="text/css">
-		.header {
- 	 padding: 60px;
-  	text-align: center;
-  	background: #1abc9c;
-  	color: white;
-  	font-size: 30px;
-  	
-}
-.tabular{
-  width: 900px;
-  margin-left: 20%;
-  background-color: white;
-
-}
-.table
-{
-  width: 600px;
-  padding: 25px;
-  margin-left: 20%;
-  margin-top:20px;
-  background-color: orange;
-  border-radius: 2px;
-  
-}
-.table input
-{
-	border-radius: 2px;
-}
-@media screen and (max-width: 650px)
-{
-  
-  #overla p
-  {
-    font-size: 15px;
-  }
-  #overla table
-  {
-    font-size: 10px;
-    
-    margin-left: 1%;
-    font-size: 15px;
-    padding: 0px;
-  }
-  .tabular{
-     position: absolute;
-  margin-left: 0%;
-  width: 550px;
-  left: 0px;
-  background-color: white;
-  display: block;
-
-}
-.tabular h1
-{
-
-  font-size: 16px;
-  margin-left: 0%;
-}
-.table
-{
-  width: 450px;
- 
-  margin-left: 0px;
-  margin-top:20px;
-  background-color: orange;
-  border-radius: 2px;
-  display: block;
-  overflow-x:auto;
-  
-}
-}
-
-</style>
-
 </head>
 <body style="background-image: url('https://jooinn.com/images/company-3.jpg'); ">
-<header style="background-color: #006db0;" class="header">
+<header  id='jumbo'>
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-			<a href="http://localhost/app/php/studentview1.php">back</a>
+		<h1 style="text-align: center;"><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+			<center><a href="http://localhost/app/php/studentview1.php">back</a></center>
+
+		</header>
 			<?php
 
 		$x=$_SESSION['roll'];
@@ -136,11 +54,11 @@ if (!isset($_SESSION['roll'])) {
 		}
 	?>
 
-	</header>
+	
 <a href="http://localhost/app/php/logoutst.php" >LOGOUT</a>
-	<p style="text-align: center; text-shadow: rgb(120,120,112,0.4);"><?php echo $name;?></p>
+	<p style="text-align: center; text-shadow: rgba(120,120,112,0.4);"><?php echo $name;?></p>
 <div class="tabular">	
-	<table border="2px" class="table">
+	<table  class="table">
 	<form action="http://localhost/app/php/sprofilecreate.php" method="POST"  name="profile">
 		
 		<tr><td>YOUR NAME:
@@ -175,50 +93,61 @@ if (!isset($_SESSION['roll'])) {
 		<tr><td>Designation:
 		<input type="text" name="Designation" required>
 		</td></tr>
-		<tr><td><center><input type="submit" name="sub" value="ENTER" class="btn btn-primary" onclick="caller()">
-		<input type="submit" name="edit" value="EDIT" class="btn btn-primary"></td></tr></center>
+		<tr><td><center><input  type="submit" name="sub" value="ENTER" >
+		<input  type="submit" name="edit" value="EDIT"></td></tr></center>
 	
 	</form>
 </table>
 
 <?php
-$row=0;
-$con=mysqli_connect('localhost:3308','root');
-mysqli_select_db($con,'db3');
-$check="select * from studprofile where roll='$x' ";
-$result=mysqli_query($con,$check);
+if(isset($_POST['edit'])){
+		$row=0;
+		$con=mysqli_connect('localhost:3308','root');
+		mysqli_select_db($con,'db3');
+		$check="select * from studprofile where roll='$x' ";
+		$result=mysqli_query($con,$check);
 
-if($result)
-{
-	$row=mysqli_num_rows($result);
-}
-if($row and isset($_POST['edit']))
-{
-	$sscc=$_POST['ssc'];
-	$hscc=$_POST['hcs'];
-	$cgpii=$_POST['cgpi'];
-	$skillss=$_POST['skill'];
-	$programs=$_POST['language'];
-	$designations=$_POST['Designation'];
+		if($result)
+		{
+			$row=mysqli_num_rows($result);
+		}
+		if($row and isset($_POST['edit']))
+		{
+			$sscc=$_POST['ssc'];
+			$hscc=$_POST['hcs'];
+			$cgpii=$_POST['cgpi'];
+			$skillss=$_POST['skill'];
+			$programs=$_POST['language'];
+			$designations=$_POST['Designation'];
 
-	$q="update table studprofile set ssc=$sscc,hsc=$hscc,cgpi=$cgpii,skills='$skillss',program='$programs',designation='$designations'";
-	$done=mysqli_query($con,$q);
-	if($done)
-	{
-		?>
-		<script type="text/javascript">
-			alert("updation done successfully");
-		</script>
-		<?php
-	}
+			$q="update table studprofile set ssc=$sscc,hsc=$hscc,cgpi=$cgpii,skills='$skillss',program='$programs',designation='$designations'";
+			$done=mysqli_query($con,$q);
+			if($done)
+			{
+				?>
+				<script type="text/javascript">
+					alert("updation done successfully");
+				</script>
+				<?php
+			}
+			else
+			{
+				?>
+				<script type="text/javascript">
+					alert('updation failed');
+				</script>
+				<?php
+			}
+		}
 }
 ?>
 	
 
-	<script type="text/javascript">
-		function caller()
-		{
+	
 			<?php
+			if (isset($_POST['sub'])) {
+				# code...
+			
 			$name=$_POST['stname'];
 			$use=$_POST['use'];
 			$rol=$_POST['rol'];
@@ -236,24 +165,29 @@ if($row and isset($_POST['edit']))
 			$r="insert into studprofile (roll,stname,uname,ssc,hsc,cgpi,skills,program,contact,email,designation) values ('$rol','$name','$use',$sscc,$hscc,$cgpii,'$skillss','$programs',$contacts,'$emai','$designations')";
 			$out=mysqli_query($con,$r);
 			
-			if($out)
+			if($out and isset($_POST['sub']))
 			{
 				?>
+				<script type="text/javascript">
 				alert("PROFILE HAS BEEN CREATED SUCCESSFULLY");
+				</script>
 				<?php
 			}
 			else
 			{
 				?>
+				<script type="text/javascript">
 				
 				alert("PROFILE COULDN'T BE CREATED!");
+				</script>
 				<?php
 			}
-			?>
+			
 		}
 		
+		?>
 
-	</script>
+	
 
 	<table  class="table">
 	<form method="POST" action=""  enctype="multipart/form-data">
