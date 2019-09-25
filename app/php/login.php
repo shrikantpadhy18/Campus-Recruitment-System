@@ -12,9 +12,9 @@
 	
 </head>
 <body style="background-image: url('https://www.itcompanyindia.in/img/en/It-Company.png');">
-	<header style="background-color: #006db0;" class="header" id="jumbo">
+	<header style="background-image:url('https://static.oliveboard.in/wp-content/uploads/2017/09/Campus-Placement-Interview-Preparation-Guide.png') ;background-size: cover;height: 600px;" class="header" id="jumbo">
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-		<h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+		<h1><b style="font-style: italic;transform: translate(-50%, -50%);color: black">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
 			<a href="http://localhost/app/html/homepage.html">Back</a>
 	</header>
 	<br>
@@ -108,9 +108,16 @@
             title:'ACCOUNT UPDATION DETAIL',
             text:"YOUR ACCOUNT UPDATION HAS BEEN SUCCESSFUL!",
             type:'success',
-            timer:3500
+            
             }
             )
+        setTimeout(set,3000);
+
+        function set()
+        {
+          console.log("");
+        }
+       
         <?php
       }
       else
@@ -119,25 +126,37 @@
         Swal.fire(
             {
             title:'ACCOUNT UPDATION DETAIL',
+
             text:"YOUR ACCOUNT UPDATION HAS FAILED",
             type:'error',
-            timer:3500
+            
             }
+
             )
+         setTimeout(set,3000);
+
+        function set()
+        {
+          console.log("");
+        }
+       
+         
         <?php
       }
       ?>
     }
     
   </script>
+
+  
 <div class="footer">
   <p>"FORGOT PASSWORD?"</p>
-  <form method="GET" id="fpassword" action="http://localhost/app/php/forgot.php" >
-  Username:<input size="4" style="border-radius: 15%;" type="text" name="username">
-  Roll:<input style="border-radius: 15%;" type="text" name="rollno">   
+  <form method="POST" id="fpassword" action="http://localhost/app/php/forgot.php" >
+  Username:<input size="4" style="border-radius: 15%;" type="text" name="username" required>
+  Roll:<input style="border-radius: 15%;" type="text" name="rollno" required>   
 
 
-  <input type="submit" name="submit" value="submit">
+  <input type="submit" name="submitfor" value="submit">
   </form>
   
 </div>

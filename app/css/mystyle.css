@@ -2,6 +2,8 @@
   border-radius: 20%;
   border-left-color: green;
   border-top-color: green;
+  
+
 }
 
 /* slideshow */
@@ -84,8 +86,13 @@
     margin: 3px;
 
   }
+
   
-  
+  #jumbo
+  {
+    background-image: none;
+    background-color: #1aa4b8;
+  }
 
   
 }

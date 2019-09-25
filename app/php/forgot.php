@@ -13,8 +13,8 @@ session_start();
     $row=0;
     $result=0;
     $out=0;
-  $usr=$_GET['username'];
-  $roll=$_GET['rollno'];
+  $usr=$_POST['username'];
+  $roll=$_POST['rollno'];
   $q="select * from register1 where roll='$roll' and username='$usr' ";
   $con=mysqli_connect('localhost:3308','root');
   mysqli_select_db($con,'db3');
@@ -36,8 +36,10 @@ session_start();
   }
 
   ?>
+  
   document.getElementById('revert').action="http://localhost/app/php/login.php";
   document.getElementById('revert').submit();
+  
   </script>
 </body>
 </html>
