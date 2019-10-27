@@ -129,7 +129,7 @@
     $search1=$_POST['search1'];
     $search2=$_POST['search2'];
   
-    $con=mysqli_connect('localhost:3308','root');
+    $con=mysqli_connect('localhost','root');
     mysqli_select_db($con,'db3');
     $q="select * from studprofile where cgpi>=$search1 and designation LIKE '%$search2%' ";
     $result=mysqli_query($con,$q);
@@ -298,7 +298,7 @@
       $ssc=$_POST['ssc'];
       $hsc=$_POST['hsc'];
       $package=$_POST['package'];    
-      $con=mysqli_connect('localhost:3308','root');
+      $con=mysqli_connect('localhost','root');
       mysqli_select_db($con,'db3');
       $q="insert into companyrequirements(cgpi,skillsneeded,ssc,hsc,package,name) values($cgpi,'$skill',$ssc,$hsc,'$package','$y')";
       $out=mysqli_query($con,$q);

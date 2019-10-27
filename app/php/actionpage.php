@@ -23,7 +23,7 @@ session_start();
 			$_SESSION['roll']=$roll;
 
 			
-			$con=mysqli_connect('localhost:3308','root');
+			$con=mysqli_connect('localhost','root');
 			mysqli_select_db($con,'db3');
 			$q="select * from register1 where username='$uname' and roll='$roll' and password='$psw'";
 			$result=mysqli_query($con,$q);

@@ -52,7 +52,7 @@ session_start();
 	
 	<?php
 	
-	$con=mysqli_connect("localhost:3308","root");
+	$con=mysqli_connect("localhost","root");
 	$name=$_POST['name'];
 	$username=$_POST['uname'];
 	$password=$_POST['psw'];

@@ -18,7 +18,7 @@ $result=0;
 $num=0;
 $aid=$_POST['aid'];
 $password=$_POST['psw'];
-$con=mysqli_connect('localhost:3308','root');
+$con=mysqli_connect('localhost','root');
 mysqli_select_db($con,'db3');
 
 

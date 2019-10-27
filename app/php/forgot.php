@@ -16,7 +16,7 @@ session_start();
   $usr=$_POST['username'];
   $roll=$_POST['rollno'];
   $q="select * from register1 where roll='$roll' and username='$usr' ";
-  $con=mysqli_connect('localhost:3308','root');
+  $con=mysqli_connect('localhost','root');
   mysqli_select_db($con,'db3');
   $result=mysqli_query($con,$q);
   

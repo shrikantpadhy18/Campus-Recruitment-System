@@ -1,4 +1,8 @@
 
+<?php
+require_once "config.php";
+$loginURL=$gClient->createAuthUrl();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,7 +45,11 @@
       <input type="text" placeholder="Enter Roll No" name="roll" required></td></tr>
         
       <tr><td><button type="submit">Login</button></td></tr>
-       
+      <tr>
+        <td>
+          <button onclick="window.location= '<?php echo $loginURL ?>' ;" >LOGIN WITH GOOGLE</button>
+        </td>
+      </tr>       
        
       <tr><td><a href="#display">change password</a></td></tr>
     </div>

@@ -1,5 +1,7 @@
 <?php
-	session_start();
+session_start();
+
+
     if ( !isset($_SESSION['roll'])) {
         # hcode...
     header('location:http://localhost/app/php/login.php');
@@ -99,7 +101,7 @@
        <p style="font-size: 25px;z-index: 1;cursor: pointer;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text">
         <?php
         $row=0;
-        $con=mysqli_connect('localhost:3308','root');
+        $con=mysqli_connect('localhost','root');
         mysqli_select_db($con,'db3');
         $q="select * from  companyrequirements";
         $result=mysqli_query($con,$q);

@@ -8,7 +8,7 @@
 session_start();
 $cid=$_POST['cid'];
 $psw=$_POST['psw'];
-$con=mysqli_connect('localhost:3308','root');
+$con=mysqli_connect('localhost','root');
 mysqli_select_db($con,'db3');
 $q="insert into company(cid,password) values('$cid','$psw')";
 $outcome=mysqli_query($con,$q);

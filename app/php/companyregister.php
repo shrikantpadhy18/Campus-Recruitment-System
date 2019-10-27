@@ -73,7 +73,7 @@ if(!isset($_SESSION['aid']))
 
 $result=0;
 $num=0;
-$con=mysqli_connect('localhost:3308','root');
+$con=mysqli_connect('localhost','root');
 mysqli_select_db($con,'db3');
 $q="select * from company";
 $result=mysqli_query($con,$q);

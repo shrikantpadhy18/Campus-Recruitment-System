@@ -40,7 +40,7 @@ if (!isset($_SESSION['roll'])) {
 		?>
 		 <p style="position: relative;text-align: right;font-size: 30px;color: red;"><?php echo "hello $x($y)";?></p>
 		<?php
-		$con=mysqli_connect("localhost:3308","root");
+		$con=mysqli_connect("localhost","root");
 		mysqli_select_db($con,"db3");
 		$q="select * from register1 where roll='$x' and username='$y' ";
 		$result=mysqli_query($con,$q);
@@ -102,7 +102,7 @@ if (!isset($_SESSION['roll'])) {
 <?php
 if(isset($_POST['edit'])){
 		$row=0;
-		$con=mysqli_connect('localhost:3308','root');
+		$con=mysqli_connect('localhost','root');
 		mysqli_select_db($con,'db3');
 		$check="select * from studprofile where roll='$x' ";
 		$result=mysqli_query($con,$check);
@@ -160,7 +160,7 @@ if(isset($_POST['edit'])){
 			$emai=$_POST['emai'];
 			$designations=$_POST['Designation'];
 
-			$con=mysqli_connect('localhost:3308','root');
+			$con=mysqli_connect('localhost','root');
 			mysqli_select_db($con,'db3');
 			$r="insert into studprofile (roll,stname,uname,ssc,hsc,cgpi,skills,program,contact,email,designation) values ('$rol','$name','$use',$sscc,$hscc,$cgpii,'$skillss','$programs',$contacts,'$emai','$designations')";
 			$out=mysqli_query($con,$r);
@@ -227,7 +227,7 @@ if(isset($_POST['edit'])){
 			
 			if(move_uploaded_file($tempname, $folder) and $name!='' and in_array($extension, $allowed))
 			{
-				$con=mysqli_connect('localhost:3308','root');
+				$con=mysqli_connect('localhost','root');
 				mysqli_select_db($con,'db3');
 				
 

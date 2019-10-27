@@ -9,7 +9,7 @@ session_start();
     $result=0;
     $em=-1;
   
-    $con=mysqli_connect('localhost:3308','root');
+    $con=mysqli_connect('localhost','root');
     mysqli_select_db($con,'db3');
     $q="select * from studprofile ";
     $result=mysqli_query($con,$q);
@@ -145,7 +145,7 @@ session_start();
       $result1=0;
 
 
-          $con1=mysqli_connect('localhost:3308','root');
+          $con1=mysqli_connect('localhost','root');
           mysqli_select_db($con1,'db3');
           $check ="select * from studprofile where roll='$roll' ";
           $status=mysqli_query($con,$check);

@@ -11,7 +11,7 @@
 	$num=0;
 	$cid=$_POST['cid'];
 	$psw=$_POST['psw'];
-	$con=mysqli_connect('localhost:3308','root');
+	$con=mysqli_connect('localhost','root');
 	mysqli_select_db($con,'db3');
 
 	$s="select * from company where cid='$cid' and password='$psw'";
