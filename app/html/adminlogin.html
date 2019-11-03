@@ -2,16 +2,38 @@
 <html>
 <head>
 		<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">        
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
 
 	<title></title>
 	<style type="text/css">
-		.header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
+a:link, a:visited {
+  background-color: #f44336;
   color: white;
-  font-size: 30px;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+input[type="submit"],input[type='reset']
+{
+  border:none;
+  outline: none;
+  height: 40px;
+  background: blue;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+input[type="submit"]:hover,input[type='reset']:hover
+{
+  cursor: pointer;
+  background: black;
+  color: white;
+
+}
+a:hover, a:active  {
+  background-color: blue;
 }
 .tabular{
   width: 900px;
@@ -77,10 +99,10 @@
 </head>
 <body>
 	
-			<header style="background:transparent;" class="header" id="jumbo" style="height: 100px;border-radius: 1px;">
+			<header style="background:transparent;"  id="jumbo" style="height: 100px;border-radius: 1px;">
     <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-    <h1><b style="font-style: italic;color: black">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-      <a href="http://localhost/app/html/homepage.html">Back</a>
+    <center><h1><b style="font-style: italic;color: black">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+      <a class="fa fa-arrow-circle-left" href="http://localhost/app/html/homepage.html">BACK</a></center>
   </header>
 	
 
@@ -96,12 +118,18 @@
       <tr><td><label for="aid"><b>ADMIN ID</b></label>
       <input type="text" placeholder="Enter Admin Id" name="aid" required></td></tr>
 
-      <tr><td><label for="psw"><b>password</b></label>
-      <input type="password" placeholder="Enter password" name="psw" required></td></tr>
+      <tr><td>
+        <label for="psw"><b>PASSWORD</b></label>         
+      <input  type="password" placeholder="Enter password" name="psw" required>
+      </td></tr>
+
         
-      <tr><td><button type="submit">Login</button></td></tr>
+      <tr><td><input type="submit" value="LOGIN"></input>
+        <input type="reset" value="CLEAR"></input>
+      </td></tr>
   </form>
 </table>
+
 
 </div>
  <div class="footer">

@@ -28,13 +28,7 @@
 <!endif]-->   
 
 <style type="text/css">
-  #jumbo
-  {
-    background-image:url('https://static.oliveboard.in/wp-content/uploads/2017/09/Campus-Placement-Interview-Preparation-Guide.png') ;
-    background-size: cover;
-    height: 600px;
-  }
-  @media screen and (max-width: 650px)
+  @media screen and (max-width: 600px)
   {
     #jumbo
     {
@@ -50,7 +44,7 @@
 </head>
 <body style="background-color: #f0f8ff;">
 
-<div  class="jumbotron jumbotron-fluid" id='jumbo'>
+<div   id='jumbo'>
   <div class="container">
       <img style="position: relative;left: 0px;width: 260px;height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
       <h1><b style="font-style: italic;transform: translate(-50%, -50%);">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
@@ -93,7 +87,7 @@
 <br>
 
 <!--Student-->
-<section style="height: 1070px;background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rbGMAGytlGjahhgrii/videoblocks-big-data-visualization-abstract-nanotechnology-black-color-plexus-backgroundmesh-nanotechnology-global-network-with-copy-space-animated-in-perfect-loop-uhd-4k-3840-2160_hdgowjjiq7_thumbnail-full01.png');">
+<section style="height: 1070px;background-image: url('http://localhost/app/images/texture.jpg');">
 
 
     <div   class="card" >
@@ -246,19 +240,19 @@ function off() {
                         <br>
                         <form  method="POST" role="form " class="contactForm " id="gform" action="http://localhost/app/php/feedback.php">
                             <div class="col-sm-4 form-group ">
-                                <input type="text " name="name" class="form-control text-field-box " id="name " placeholder="Your Name " data-rule="minlen:4 " data-msg="Please enter at least 4 chars " />
+                                <input type="text " name="name" class="form-control text-field-box " id="name " placeholder="Your Name " data-rule="minlen:4 " data-msg="Please enter at least 4 chars " required />
                                 <div class="validation "></div>
                             </div>
                             <div class="col-sm-4 form-group ">
-                                <input type="email" class="form-control text-field-box " name="email" id="email " placeholder="Your Email " data-rule="email " data-msg="Please enter a valid email " />
+                                <input type="email" class="form-control text-field-box " name="email" id="email " placeholder="Your Email " data-rule="email " data-msg="Please enter a valid email " required />
                                 <div class="validation "></div>
                             </div>
                             <div class="col-sm-4 form-group ">
-                                <input type="text " class="form-control text-field-box " name="subject" id="subject " placeholder="Subject " data-rule="minlen:4 " data-msg="Please enter at least 8 chars of subject " />
+                                <input type="text " class="form-control text-field-box " name="subject" id="subject " placeholder="Subject " data-rule="minlen:4 " data-msg="Please enter at least 8 chars of subject " required />
                                 <div class="validation "></div>
                             </div>
                             <div class="col-md-12 form-group ">
-                                <textarea class="form-control text-field-box " name="message" rows="5 " data-rule="required " data-msg="Please write something for us " placeholder="Message "></textarea>
+                                <textarea class="form-control text-field-box " name="message" rows="5 " data-rule="required " data-msg="Please write something for us " placeholder="Message " required></textarea>
                                 <div class="validation "></div>
 
                                 <button class="button-medium " id="contact-submit " type="submit " name="contact ">Submit Now</button><br>

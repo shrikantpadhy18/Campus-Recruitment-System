@@ -17,7 +17,7 @@
   padding: 25px;
   margin-left: 20%;
   margin-top:20px;
-  background-color: orange;
+  background-color:white;
   border-radius: 2px;
   
 }
@@ -57,10 +57,22 @@
  
   margin-left: 0px;
   margin-top:20px;
-  background-color: orange;
+  background-color: white;
   border-radius: 2px;
   display: block;
   overflow-x:auto;
   
 }
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: blue;
 }

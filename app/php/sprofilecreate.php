@@ -10,27 +10,65 @@ if (!isset($_SESSION['roll'])) {
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>  
 	  
 	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/sprofilecreate.css"/>   
 
-	
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Latest compiled and minified CSS -->
 
+<style type="text/css">
+	        a:link, a:visited {
+  background-color: blue;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active  {
+  background-color: red;
+}
+input[type="submit"]
+{
+  border:none;
+  outline: none;
+  height: 40px;
+  background: blue;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
 
- <!-- Compiled and minified CSS -->
-     <!-- Compiled and minified CSS -->
+ input[type="submit"]:hover
+{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+
+}
+input[type='text'],input[type='password']
+{
+  border-radius: 5px;
+  padding: 12px;
+  width: 192px;
+}
+
+</style>
 
 	<title>
 		student section
 	</title>
 </head>
-<body style="background-image: url('https://jooinn.com/images/company-3.jpg'); ">
-<header  id='jumbo'>
+<body>
+<header style="background-color: white;" id='jumbo'>
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
 		<h1 style="text-align: center;"><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-			<center><a href="http://localhost/app/php/studentview1.php">back</a></center>
+			<center><a class="fa fa-arrow-circle-left" href="http://localhost/app/php/studentview1.php">Back</a></center>
 
 		</header>
 			<?php
@@ -38,7 +76,7 @@ if (!isset($_SESSION['roll'])) {
 		$x=$_SESSION['roll'];
 		$y=$_SESSION['susername'];
 		?>
-		 <p style="position: relative;text-align: right;font-size: 30px;color: red;"><?php echo "hello $x($y)";?></p>
+		 <h1 style="position: relative;text-align: right;font-size: 30px;color: red;"><?php echo "Hello $x($y)";?></h1>
 		<?php
 		$con=mysqli_connect("localhost","root");
 		mysqli_select_db($con,"db3");
@@ -55,43 +93,44 @@ if (!isset($_SESSION['roll'])) {
 	?>
 
 	
-<a href="http://localhost/app/php/logoutst.php" >LOGOUT</a>
-	<p style="text-align: center; text-shadow: rgba(120,120,112,0.4);"><?php echo $name;?></p>
+<a href="http://localhost/app/php/logoutst.php" class="fa fa-power-off" >LOGOUT</a>
+	
 <div class="tabular">	
-	<table  class="table">
+	<h1>FILL THE DETAILS </h1>
+	<table  class="table" style="background-color:black;box-shadow: 0 8px 6px -6px black;">
 	<form action="http://localhost/app/php/sprofilecreate.php" method="POST"  name="profile">
 		
-		<tr><td>YOUR NAME:
-		<input type="text" name="stname" placeholder="ENTER NAME" value=<?php echo "'$name'"; ?>  readonly></td></tr>
+		<tr><td>
+		<input type="text" name="stname" placeholder="ENTER NAME" value=<?php echo "'$name'"; ?>  readonly>||
 
-		<tr><td> Your username
-		<input type="text" name="use" id="user" value=<?php echo "'$y'"; ?>  readonly></td></tr>
+		 
+		<input type="text" name="use" id="user" value=<?php echo "'$y'"; ?>  readonly>||
 
-		<tr><td>roll no
+		
 		<input type="text" name="rol" value=<?php echo "$x"; ?> readonly></td></tr>
 
-		<tr><td>YOUR H.S.C AGGREGATE
-		<input type="number" name="hcs" placeholder="HSC AGG" required></td></tr>
+		<tr><td>
+		<input type="number" name="hcs" placeholder="HSC AGGREGATE" required>||
 
-		<tr><td>YOUR SSC AGGREGATE
-		<input type="number" name="ssc" required><td></tr>
+		
+		<input type="number" name="ssc" placeholder="SSC AGGREGATE" required>||
 
-		<tr><td>AVERAGE CGPI
-		<input type="number" name="cgpi" required></td></tr>
+		
+		<input type="number" name="cgpi" placeholder="AVERAGE CGPI" required></td></tr>
 
-		<tr><td>YOUR SKILLS 
-		<input type="text" name="skill" placeholder="skill" required></td></tr>
+		<tr><td>
+		<textarea cols="34px;" name="skill" placeholder="YOUR SKILLS" required></textarea>||
 
-		<tr><td>Programming Language Known
-		<input style="column-width: 50%" type="text" name="language" required></td></tr>
+		
+		<textarea cols="35px" name="language" placeholder="PROGRAMMING LANGUAGE KNOWN" required></textarea></td></tr>
 
-		<tr><td>Contact Number
-		<input type="number" name="no" value=<?php echo "$cno"; ?> readonly>
+		<tr><td>
+		<input type="number" name="no" value=<?php echo "$cno"; ?> readonly>||
 
-		EmailId
-		<input type="email" name="emai" value=<?php echo "$email"; ?> readonly></td></tr>
-		<tr><td>Designation:
-		<input type="text" name="Designation" required>
+		
+		<input type="email" name="emai" value=<?php echo "$email"; ?> readonly>||
+		
+		<input type="text" name="Designation" placeholder="DESIGNATION" required>
 		</td></tr>
 		<tr><td><center><input  type="submit" name="sub" value="ENTER" >
 		<input  type="submit" name="edit" value="EDIT"></td></tr></center>
@@ -125,17 +164,59 @@ if(isset($_POST['edit'])){
 			if($done)
 			{
 				?>
-				<script type="text/javascript">
-					alert("updation done successfully");
-				</script>
+				<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://image.flaticon.com/icons/png/512/8/8912.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'PROFILE UPDATION DETAILS',
+              text:"UPDATION SUCCESSFUL",
+              confirmButtonText: 'TRY AGAIN',
+              type:'success',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
 				<?php
 			}
 			else
 			{
 				?>
-				<script type="text/javascript">
-					alert('updation failed');
-				</script>
+				<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://image.flaticon.com/icons/png/512/8/8912.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'PROFILE UPDATION DETAILS',
+              text:"UPDATION FAILED",
+              confirmButtonText: 'TRY AGAIN',
+              type:'error',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
 				<?php
 			}
 		}
@@ -168,18 +249,59 @@ if(isset($_POST['edit'])){
 			if($out and isset($_POST['sub']))
 			{
 				?>
-				<script type="text/javascript">
-				alert("PROFILE HAS BEEN CREATED SUCCESSFULLY");
-				</script>
+				<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://ieeecs-media.computer.org/wp-media/2018/08/18001759/psd_logo-icon.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'PROFILE DETAIL',
+              text:"PROFILE CREATION IS SUCCESSFULLY DONE",
+              confirmButtonText: 'DONE',
+              type:'success',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
 				<?php
 			}
 			else
 			{
 				?>
-				<script type="text/javascript">
-				
-				alert("PROFILE COULDN'T BE CREATED!");
-				</script>
+				<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://ieeecs-media.computer.org/wp-media/2018/08/18001759/psd_logo-icon.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'PROFILE DETAILS',
+              text:"PROFILE CREATION FAILED",
+              confirmButtonText: 'TRY AGAIN',
+              type:'error',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
 				<?php
 			}
 			
@@ -189,14 +311,16 @@ if(isset($_POST['edit'])){
 
 	
 
-	<table  class="table">
+	<table  class="table" style="background-color: black;box-shadow: 0 8px 6px -6px black;">
 	<form method="POST" action=""  enctype="multipart/form-data">
 		
-			<h6>UPLOAD RESUME IN PDF FORMAT ONLY</h6>
+			<h1>UPLOAD RESUME IN PDF FORMAT ONLY</h1>
+
 			<tr>
 				<td><input type="text" name="roller" value=<?php echo "$x";?> readonly></td>
 			</tr>
 			<tr>
+				<img src="https://image.flaticon.com/icons/png/512/12/12313.png" width="250px" height="300px;">
 				<td><input type="file" name="upfile" value=""></td>
 			</tr>
 			<tr>
@@ -223,7 +347,7 @@ if(isset($_POST['edit'])){
 			$allowed=array('pdf');
 
 		
-			$folder="C:/wamp64/www/app/student/"."$x".$name;
+			$folder= $_SERVER['DOCUMENT_ROOT'] ."/app/student/"."$x".$name;
 			
 			if(move_uploaded_file($tempname, $folder) and $name!='' and in_array($extension, $allowed))
 			{
@@ -246,18 +370,60 @@ if(isset($_POST['edit'])){
 				else
 				{
 					?>
-					<script type="text/javascript">
-						alert('uploading failed');
-					</script>
+					<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://cdn1.iconfinder.com/data/icons/files-and-folders-16/128/16-512.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'DOCUMENT UPLOAD DETAIL',
+              text:"RESUME UPLOADED SUCCESSFULLY",
+              confirmButtonText: 'OKAY',
+              type:'success',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
 					<?php
 				}
 			}
 			else
 			{
 				?>
-				<script type="text/javascript">
-					alert("please upload your resume in the  pdf format");
-				</script>
+				<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://cdn1.iconfinder.com/data/icons/files-and-folders-16/128/16-512.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'DOCUMENT UPLOAD DETAILS',
+              text:"RESUME UPLOADING FAILED",
+              confirmButtonText: 'TRY AGAIN',
+              type:'error',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
 				<?php
 			}
 
@@ -267,6 +433,9 @@ if(isset($_POST['edit'])){
 
 			
 </script>
+<div class="footer">
+  <p>"knowledge is power"</p>
+</div>
 </body>
 
 </html>

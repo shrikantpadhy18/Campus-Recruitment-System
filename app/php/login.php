@@ -1,25 +1,48 @@
 
-<?php
-require_once "config.php";
-$loginURL=$gClient->createAuthUrl();
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>   
   <link rel="stylesheet" type="text/css" href="http://localhost/app/css/login.css"/>   
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.css">      
+  <link rel="stylesheet" type="text/css" href="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">      
   <!-- Latest compiled and minified CSS -->
   <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+ <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+ <style type="text/css">
+   a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+input[type="submit"]
+{
+  border:none;
+  outline: none;
+  height: 40px;
+  background: blue;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+a:hover, a:active  {
+  background-color: blue;
+}
+ </style>
+
 	<title></title>
 	
 </head>
-<body style="background-image: url('https://www.itcompanyindia.in/img/en/It-Company.png');">
-	<header style="background-image:url('https://static.oliveboard.in/wp-content/uploads/2017/09/Campus-Placement-Interview-Preparation-Guide.png') ;background-size: cover;height: 600px;" class="header" id="jumbo">
+<body >
+	<header style="background-color: white;" id="jumbo" >
 		<img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-		<h1><b style="font-style: italic;transform: translate(-50%, -50%);color: black">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-			<a href="http://localhost/app/html/homepage.html">Back</a>
+		<center><h1><b style="font-style: italic;transform: translate(-50%, -50%);color: black">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+			<a class="fa fa-arrow-circle-left" href="http://localhost/app/html/homepage.html">BACK</a></center>
 	</header>
 	<br>
 	<br>
@@ -27,7 +50,7 @@ $loginURL=$gClient->createAuthUrl();
 
 <div class="tabular">
   
-<table class="table">
+<table class="table" style="box-shadow: 0 8px 6px -6px black;">
   <form  action="http://localhost/app/php/actionpage.php" method="POST">
     <tr><td><div class="imgcontainer">
       
@@ -36,20 +59,15 @@ $loginURL=$gClient->createAuthUrl();
 
     
       
-     <tr><td> <label for="uname"><b>Username</b></label>
+     <tr><td> <label for="uname"><b>Username </b><i class="glyphicon glyphicon-user"></i></label>
       <input type="text" placeholder="Enter Username" name="uname" required></td></tr>
 
-      <tr><td><label for="psw1"><b>Password</b></label>
+      <tr><td><label for="psw1"><b>Password  <i class="fa fa-lock"></i> </b></label>
       <input type="password" placeholder="Enter Password" name="psw1" required></td></tr>
       <tr><td><label for="roll"><b>Enter Roll No</b></label>
       <input type="text" placeholder="Enter Roll No" name="roll" required></td></tr>
         
-      <tr><td><button type="submit">Login</button></td></tr>
-      <tr>
-        <td>
-          <button onclick="window.location= '<?php echo $loginURL ?>' ;" >LOGIN WITH GOOGLE</button>
-        </td>
-      </tr>       
+      <tr><td><button type="submit">Login</button></td></tr>      
        
       <tr><td><a href="#display">change password</a></td></tr>
     </div>
@@ -59,16 +77,16 @@ $loginURL=$gClient->createAuthUrl();
 <table id="display" class="table" border="2px">
 <form   action="http://localhost/app/php/login.php" method="POST">
  <span><center ><h1><u><b>CHANGE PASSWORD</b></u></h1></center></span><br>
-  USERNAME:
-  <input type="text" name="uname">
+  USERNAME
+  <input type="text" name="uname" placeholder="Username" required>
   ROLL:
-  <input type="text" name="roll">
-  OLD PASSWORD:
-  <input type="text" name="opsw">
-  NEW PASSWORD:
-  <input type="text" name="npsw">
+  <input type="text" name="roll" placeholder="Roll" required>
+  OLD PASSWORD
+  <input type="text" name="opsw" placeholder="Old Password" required>
+  NEW PASSWORD
+  <input type="text" name="npsw" placeholder="New Password" required>
 
-  <center><button onclick="changer()" type="submit" name="submit" >CAHNGE</button></center>
+  <center><button type="submit" name="change" >CHANGE</button></center>
 
 
 
@@ -92,69 +110,99 @@ $loginURL=$gClient->createAuthUrl();
 </form>
 </table>
 </div>
-  <script type="text/javascript">
-    function changer()
-    {
+  
+    
       <?php
+      if(isset($_POST['change']))
+      {
+          $rowno=0;
       session_start();
       $uname=$_POST['uname'];
       $roll=$_POST['roll'];
       $opsw=$_POST['opsw'];
       $npsw=$_POST['npsw'];
-      $con=mysqli_connect('localhost:3308','root');
+      $con=mysqli_connect('localhost','root');
+      $z="select * from register1 where password='opsw' and username='$uname' and roll='$roll'";
+      $result2=mysqli_query($con,$z);
+      $rowno=mysqli_num_rows($result2);
       $q="update register1 set password='$npsw' where username='$uname' and roll='$roll' and password='$opsw' ";
       mysqli_select_db($con,'db3');
       $result=mysqli_query($con,$q);
 
-      if($result)
+      if($result and $rowno)
       {
         ?>
+          <form id="reverse" action="#">
 
-
-        Swal.fire(
+          <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
             {
-            title:'ACCOUNT UPDATION DETAIL',
-            text:"YOUR ACCOUNT UPDATION HAS BEEN SUCCESSFUL!",
-            type:'success',
-            
+              imageUrl: 'https://cdn.dribbble.com/users/913766/screenshots/3606021/update.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'ACCOUNT UPDATION DETAIL',
+              text:"YOUR ACCOUNT HAS SUCCESSFULLY BEEN UPDATED",
+              confirmButtonText: 'OKAY',
+              type:'success',
+              
             }
             )
-        setTimeout(set,3000);
+            
+            setTimeout(revert,3000);
 
-        function set()
-        {
-          console.log("");
-        }
+            function revert()
+            {
+              document.getElementById('reverse').action='http://localhost/app/php/login.php';
+              document.getElementById('reverse').submit();
+            }
+          </script>
+        </form>
+        
        
         <?php
       }
       else
       {
         ?>
-        Swal.fire(
+        <form id="reverse" action="#">
+
+          <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
             {
-            title:'ACCOUNT UPDATION DETAIL',
-
-            text:"YOUR ACCOUNT UPDATION HAS FAILED",
-            type:'error',
-            
+              imageUrl: 'https://cdn.dribbble.com/users/913766/screenshots/3606021/update.png',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'<h1>ACCOUNT UPDATION DETAIL</h1>',
+              text:"YOUR ACCOUNT UPDATION HAS FAILED!!",
+              confirmButtonText: 'TRY AGAIN',
+              type:'error',
+              
             }
-
             )
-         setTimeout(set,3000);
+            
+            setTimeout(revert,3000);
 
-        function set()
-        {
-          console.log("");
-        }
+            function revert()
+            {
+              document.getElementById('reverse').action='http://localhost/app/php/login.php';
+              document.getElementById('reverse').submit();
+            }
+          </script>
+        </form>
+       
        
          
         <?php
       }
-      ?>
     }
-    
-  </script>
+      ?>
+   
 
   
 <div class="footer">

@@ -39,6 +39,11 @@ if($num==0)
 					<script type="text/javascript">
 						Swal.fire(				
 						{
+							imageUrl: 'http://vaeyecenter.com/storage/app/media/client/button.png',
+							  imageWidth: 400,
+							  imageHeight: 100,
+							  imageAlt: 'Custom image',
+							  animation: true,
 							title:'LOGIN DETAILS OF ADMIN',
 							text:"YOUR CREDENTIALS DONT MATCH ANY EXISTING RECORD",
 							confirmButtonText: 'TRY AGAIN',
@@ -71,6 +76,11 @@ if($num==0)
 					<script type="text/javascript">
 						Swal.fire(
 						{
+							imageUrl: 'http://vaeyecenter.com/storage/app/media/client/button.png',
+							  imageWidth: 400,
+							  imageHeight: 100,
+							  imageAlt: 'Custom image',
+							  animation: true,
 						title:'LOGIN DETAILS FOR ADMIN',
 						text:"YOUR ARE SUCCESSFULLY LOGGED IN",
 						confirmButtonText: 'PROCEED',

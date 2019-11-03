@@ -40,6 +40,11 @@ session_start();
 						<script>
 						Swal.fire(				
 						{
+							imageUrl: 'http://vaeyecenter.com/storage/app/media/client/button.png',
+							  imageWidth: 400,
+							  imageHeight: 100,
+							  imageAlt: 'Custom image',
+							  animation: true,
 							title:'LOGIN DETAILS',
 							text:"YOUR CREDENTIALS DONT MATCH ANY EXISTING RECORD",
 							confirmButtonText: 'TRY AGAIN',
@@ -70,6 +75,11 @@ session_start();
 						<script>
 						Swal.fire(
 						{
+							imageUrl: 'http://vaeyecenter.com/storage/app/media/client/button.png',
+							  imageWidth: 400,
+							  imageHeight: 100,
+							  imageAlt: 'Custom image',
+							  animation: true,
 						title:'LOGIN DETAILS',
 						text:"YOUR ARE SUCCESSFULLY LOGGED IN",
 						confirmButtonText: 'PROCEED',

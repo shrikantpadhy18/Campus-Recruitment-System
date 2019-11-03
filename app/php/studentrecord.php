@@ -1,9 +1,75 @@
  <?php
 session_start();
  ?>
+ <html>
+ <head>
+<link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>  
+  <link rel="stylesheet" type="text/css" href="http://localhost/app/css/companyregister.css"/> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <title>
+    Student Details
+  </title>
+  <style type="text/css">
+        a:link, a:visited {
+  background-color: blue;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active  {
+  background-color: red;
+}
+input[type="submit"]
+{
+  border:none;
+  outline: none;
+  height: 40px;
+  background: blue;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+ input[type="submit"]:hover
+{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+
+}
+input[type='text'],input[type='password']
+{
+  border-radius: 5px;
+  padding: 12px;
+  width: 92px;
+}
+label,th,td
+{
+  color:black;
+}
+td,th
+{
+  padding: 20px;
+}
+th
+{
+  background-color: black;
+  color: white;
+}
+  </style>
+ </head>
+ <body>
 
  <div id="overla" ondblclick="off()" style="overflow-x:auto;">
-        <p style="font-size: 25px;z-index: 1;cursor: pointer;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 25px"></u></b><br>
+        <p style="font-size: 25px;z-index: 1;cursor: pointer;" id="text"><b><u style="font-size: 25px"></u></b><br>
+
+          <center><h1 >STUDENT DETAILS <i class="glyphicon glyphicon-user"></i></h1></center>
+          <hr>
+
   <?php
     $rowss=0;
     $result=0;
@@ -22,7 +88,7 @@ session_start();
     if($rowss>0)
         {
           ?>
-          <table border="9px" bgcolor="#006db0">
+          <table  bgcolor="white">
             <tr>
               <th>
                 ROLL-NUMBER
@@ -185,6 +251,8 @@ session_start();
 
 
     ?>
+    <hr>
 
-  <center>  <a href="http://localhost/app/php/companyregister.php">back</a></center>
+  <center>  <a class="fa fa-arrow-circle-left" href="http://localhost/app/php/companyregister.php">BACK</a></center>
 
+</body>

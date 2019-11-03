@@ -11,7 +11,7 @@
   <title></title>
 
 
-  <link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/>   
+  <link rel="stylesheet" type="text/css" href="http://localhost/app/css/mystyle.css"/> 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -22,7 +22,7 @@
 
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <!-- Popper JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
@@ -36,18 +36,45 @@
     company section
   </title>
   <style type="text/css">
-    .header {
-   padding: 60px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
-}
 .tabular{
   width: 900px;
   margin-left: 20%;
   background-color: white;
 
+}
+  a:link, a:visited {
+  background-color: blue;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover, a:active  {
+  background-color: red;
+}
+input[type="submit"]
+{
+  border:none;
+  outline: none;
+  height: 40px;
+  background: blue;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+}
+
+ input[type="submit"]:hover
+{
+  cursor: pointer;
+  background: #ffc107;
+  color: #000;
+
+}
+input[type='text'],input[type='password']
+{
+  border-radius: 5px;
+  padding: 12px;
 }
 .table
 {
@@ -55,8 +82,11 @@
   padding: 25px;
   margin-left: 20%;
   margin-top:20px;
-  background-color: orange;
-  border-radius: 2px;
+  background-color: white;
+ background-color: white;
+ -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
   
 }
 @media screen and (max-width: 650px)
@@ -66,14 +96,7 @@
   {
     font-size: 15px;
   }
-  #overla table
-  {
-    font-size: 10px;
-    
-    margin-left: 1%;
-    font-size: 15px;
-    padding: 0px;
-  }
+ 
   .tabular{
      position: absolute;
   margin-left: 0%;
@@ -101,25 +124,27 @@
   overflow-x:auto;
   
 }
+td,th
+{
+
+  padding: 20px;
+}
 }
 
 </style>
 
 </head>
-<body  style="background-image: url('https://jooinn.com/images/company-3.jpg');">
-<div style="background-color:#1aa4b8;" class="jumbotron jumbotron-fluid" id='jumbo'>
-  <div class="container">
-      <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
-      <h1><b style="font-style: italic;">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
-      <center><h2 ><b>CAMPUS RECRUITMENT DRIVE</h2> </center>
-        <a style="right:5px;background-color: orange;" href="http://localhost/app/php/logoutcp.php" class="btn btn-primary" >LOGOUT</a>
-  
-  </div>
-</div>
+<body >
+<header style="background:transparent;"  id="jumbo" style="height: 100px;border-radius: 1px;">
+    <img style="position: relative;left: 0px;width: 160px;height: 80px" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rait_new_logo_png.png" align="left" alt="" class="rectangle responsive-img">
+    <center><h1><b style="font-style: italic;color: black">RAMRAO ADIK INSTITUTE OF TECHNOLOGY</h1>
+     <a class="fa fa-power-off"  href="http://localhost/app/php/logoutcp.php" >LOGOUT</a>
+  </header>
+
   <center><h6>COMPANY VIEW</h6></center><br>
 
  <div id="overla" ondblclick="off()" style="overflow-x:auto;">
-        <p style="font-size: 25px;" onmouseover="this.style.color='yellow'" onmouseout="this.style.color='white' " id="text"><b><u style="font-size: 25px"></u></b><br>
+        <p style="font-size: 25px;" id="text"><b><u style="font-size: 25px"></u></b><br>
       
   <?php
     $rowss=0;
@@ -142,43 +167,45 @@
     if($rowss>0)
         {
           ?>
-          <table border="9px" bgcolor="#006db0">
+          <table style="background-color: white;-moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;">
             <tr>
-              <th>
+              <th style="background-color: black;color: white;">
                 ROLL-NUMBER
               </th>
-              <th>
+              <th style="background-color: black;color: white;">
                 STUDENT-NAME
               </th>
 
-              <th>
+              <th style="background-color: black;color: white;">
                 USER-NAME
               </th>
-              <th>
+              <th style="background-color: black;color: white;">
                 H.S.C PERCENTAGE
               </th>
-              <th>
+              <th style="background-color: black;color: white;">
                 S.S.C PERCENTAGE
               </th>
 
-              <th>
+              <th style="background-color: black;color: white;">
                 CGPI-OBTAINED
               </th>
 
-              <th>
+              <th style="background-color: black;color: white;">
                 SKILLS
               </th>
-              <th>
+              <th style="background-color: black;color: white;">
                 PROGRAMMING_LANGUAGE
               </th>
 
-              <th>
+              <th style="background-color: black;color: white;">
                CONTACT_NO
               </th>
-              <th>
+              <th style="background-color: black;color: white;">
                 EMAIL ID
               </th>
-              <th>
+              <th style="background-color: black;color: white;">
                 DESIGNATION
               </th>
               
@@ -271,13 +298,13 @@
 <table class="table" border="2px">
   <h1>Filling Up Company Criteria</h1>
 <form  method="POST" action="http://localhost/app/php/dashboard.php">
-  <tr><td>company name:<input type="text" name="cname" value=<?php echo "$y";?> readonly></td></tr> 
-  <tr><td>skills required:<input type="text" name="skill" placeholder="skills needed" required><td></tr>
-  <tr><td>cgpi required:<input style="margin-top: 20px" type="number" placeholder="cgpi needed" name="cgpi" required></td></tr>
-  <tr><td>ssc percentage:<input style="margin-top: 20px" type="number" name="ssc" placeholder="ssc %" required></td></tr>
-  <tr><td>hsc percentage:<input style="margin-top: 20px" type="number" name="hsc" placeholder="hsc %" required></td></tr>
-  <tr><td>package:<input style="margin-top: 20px" type="text" name="package" placeholder="package"  required></td></tr>
-  <tr><td><center><input type="submit" name="submit2" value="SET CREDENTIALS" class="btn btn-primary" onclick="fun()" required></center></td></tr>
+  <tr><td>COMPANY NAME<input type="text" name="cname" value=<?php echo "$y";?> readonly></td></tr> 
+  <tr><td> REQUIRED SKILLS<input type="text" name="skill" placeholder="skills needed" required><td></tr>
+  <tr><td> REQUIRED CGPI<input style="margin-top: 20px" type="number" placeholder="cgpi needed" name="cgpi" required></td></tr>
+  <tr><td>SSC PERCENTAGE<input style="margin-top: 20px" type="number" name="ssc" placeholder="ssc %" required></td></tr>
+  <tr><td>HSC PERCENTAGE<input style="margin-top: 20px" type="number" name="hsc" placeholder="hsc %" required></td></tr>
+  <tr><td>PACKAGE<input style="margin-top: 20px" type="text" name="package" placeholder="package"  required></td></tr>
+  <tr><td><center><input type="submit" name="submit2" value="SET CREDENTIALS"  required></center></td></tr>
   <br>
   <hr>
 
@@ -286,12 +313,12 @@
 <hr>
 
 
-<script type="text/javascript">
+<?php
   
 
-  function fun()
+ if(isset($_POST['submit2']))
   {
-    <?php
+    
       $name=$_POST['cname'];
       $skill=$_POST['skill'];
       $cgpi=$_POST['cgpi'];
@@ -305,18 +332,68 @@
       if($out)
       {
         ?>
-        alert("CREDENTIALS HAS BEEN ADDED SUCCESSFULLY");
+
+        
+
+          <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://icon-library.net/images/criteria-icon/criteria-icon-22.jpg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'ELIGIBILITY CRITERIA',
+              text:"CREDENTIALS ADDED SUCCESSFULLY",
+              confirmButtonText: 'DONE',
+              type:'success',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
+        
         <?php
       }
       else
       {
         ?>
-        alert("SMOETHING WENT WRONG,TRY AGAIN");
+        <script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+            <script>
+            Swal.fire(        
+            {
+              imageUrl: 'https://icon-library.net/images/criteria-icon/criteria-icon-22.jpg',
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: 'Custom image',
+                animation: true,
+              title:'ELIGIBILITY CRITERIA',
+              text:"SOMETHING WENT WRONG",
+              confirmButtonText: 'TRY AGAIN',
+              type:'error',
+              
+            }
+            )
+            
+            setTimeout(revert,3000);
+
+            function revert()
+            {
+              
+            }
+          </script>
         <?php
       }
-    ?>
+   
   }
-  </script>
+  ?>
 
 
 

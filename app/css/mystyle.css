@@ -1,7 +1,7 @@
 #jumbo{
   border-radius: 20%;
-  border-left-color: green;
-  border-top-color: green;
+  border-left-color: white;
+  border-top-color: white;
   
 
 }
@@ -25,8 +25,9 @@
   
   
   padding: 2px;
-  align-items: center;
-  margin-left:40%;
+  display: inline-block;
+  float: left;
+  
   width: 350px;
 
 
@@ -91,7 +92,7 @@
   #jumbo
   {
     background-image: none;
-    background-color: #1aa4b8;
+    background-color: white;
   }
 
   
@@ -163,6 +164,7 @@ input[type=text], input[type=password] {
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+
 
 /* Set a style for all buttons */
 button {
@@ -400,3 +402,4 @@ margin-left: 16px;
 }
 
 }
+

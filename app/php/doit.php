@@ -94,36 +94,68 @@ session_start();
 			if ($c and $rows==0) {
 				
 				?>
-					<script type="text/javascript">
-						alert("YOUR ACCOUNT CREATION IS SUCCESFULLY DONE");
+					<form id="reverse" action="#">
+
+					<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+						<script>
+						Swal.fire(				
+						{
+							imageUrl: 'https://eastwesthealing.com/wp-content/uploads/2015/04/signup.png',
+							  imageWidth: 400,
+							  imageHeight: 100,
+							  imageAlt: 'Custom image',
+							  animation: true,
+							title:'LOGIN DETAILS',
+							text:"YOUR ACCOUNT CREATION IS SUCCESSFULLY DONE!",
+							confirmButtonText: 'GO TO LOGIN',
+							type:'success',
+							
+						}
+						)
+						
+						setTimeout(revert,3000);
+
+						function revert()
+						{
+							document.getElementById('reverse').action='http://localhost/app/php/login.php';
+							document.getElementById('reverse').submit();
+						}
 					</script>
-					
-					
-					<div style="background-color: rgb(211,211,211,1);" class="card">
-					  <div class="card-body">
-					    <h4 class="card-title">SELECT VIEW</h4>
-					    <p class="card-text">SELECT AMONG THE FOLOWING OPTIONS.</p>
-					    <ol>
-					    <li><a  class="btn btn-primary" href="http://localhost/app/php/login.php">GO TO LOGINPAGE</a></li><hr>
-						<li><a  class="btn btn-primary" href="http://localhost/app/html/homepage.html">CLICK HERE TO GO BACK TO YOUR HOMEPAGE</a></li>
-						</ol>
-					    
-					  </div>
-					</div>
+				</form>
 				
 				<?php
 			}
 			else if ($rows>0) {
 				?>
 
-				<div style="background-color: rgb(211,211,211,1);" class="card">
-					  <div class="card-body">
-					  	<marquee><p onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue' " style="color: blue;">"YOU HAVE ALREADY REGISTERED"</p></marquee>
-					    <h4 class="card-title">SELECT VIEW</h4>
-					    <p class="card-text">SELECT AMONG THE FOLOWING OPTIONS.</p>
-					    <a  class="btn btn-primary" href="http://localhost/app/php/login.php">CLICK HERE TO GO BACK TO LOGINPAGE</a>
-					  </div>
-					</div>
+				<form id="reverse" action="#">
+
+					<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+						<script>
+						Swal.fire(				
+						{
+							imageUrl: 'https://eastwesthealing.com/wp-content/uploads/2015/04/signup.png',
+							  imageWidth: 400,
+							  imageHeight: 100,
+							  imageAlt: 'Custom image',
+							  animation: true,
+							title:'LOGIN DETAILS',
+							text:"YOUR ACCOUNT ALREADY EXIST IN THIS WEBSITE",
+							confirmButtonText: 'PROCEED WITH LOGIN',
+							type:'info',
+							
+						}
+						)
+						
+						setTimeout(revert,3000);
+
+						function revert()
+						{
+							document.getElementById('reverse').action='http://localhost/app/php/login.php';
+							document.getElementById('reverse').submit();
+						}
+					</script>
+				</form>
 				
 				<?php
 			}
@@ -133,17 +165,34 @@ session_start();
 				?>
 
 
-				<div style="background-color: rgb(211,211,211,1);" class="card">
-					  <div class="card-body">
-					  	<marquee><p onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue' " style="color: blue;">"OOPS!YOUR ACCOUNT COULDN'T BE CREATED TRY AGAIN"</p></marquee>
-					    <h4 class="card-title">SELECT VIEW</h4>
-					    <label class="center" for="back">
-						<p>CLICK HERE TO GO TO HOMEPAGE </p>
-						</label>
-						<a  class="btn btn-primary" name="back" href="http://localhost/app/html/homepage.html"></a>
-					  </div>
-					</div>
-				
+				<form id="reverse" action="#">
+
+					<script src="http://localhost/app/sweetalert/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+						<script>
+						Swal.fire(				
+						{
+							imageUrl: 'https://eastwesthealing.com/wp-content/uploads/2015/04/signup.png',
+							  imageWidth: 400,
+							  imageHeight: 100,
+							  imageAlt: 'Custom image',
+							  animation: true,
+							title:'LOGIN DETAILS',
+							text:"YOUR ACCOUNT COULDN;T BE CREATED!",
+							confirmButtonText: 'TRY AGAIN',
+							type:'error',
+							
+						}
+						)
+						
+						setTimeout(revert,3000);
+
+						function revert()
+						{
+							document.getElementById('reverse').action='http://localhost/app/php/login.php';
+							document.getElementById('reverse').submit();
+						}
+					</script>
+				</form>
 				
 				
 
