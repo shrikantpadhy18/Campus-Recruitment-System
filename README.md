@@ -1,4 +1,4 @@
-# Camus-Recruitment-System
+# Campus-Recruitment-System
 
 There are  three portals in the website:
 1)STUDENT: Student can login to site by creating an account.After login student can fill their academics details alongwith the skills which they had acquired during their academic curriculum and upload their resume.
